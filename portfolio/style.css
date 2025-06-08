@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+}
+
+#container {
+    display: flex;
+    height: 100dvh;
+    width: 100vw;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+
+#left-sidebar {
+    width: 9rem;
+    /*      top right bottom left*/
+    margin: 0.5rem 0 0.5rem 0.5rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    flex-shrink: 0;
+    height: calc(100vh - 1rem); /*Adjust the height to match with the page's height*/
+    border-radius: 20px;
+    /*box-shadow: horizontal vertical blur-radius spread-radius shadown-color(rgb(0,0,0), shadow-color-opacity*/
+    box-shadow: 0 0 30px 3px rgba(0,0,0,0.50);
+    z-index:1000; /*Keep on top*/
+    overflow: hidden; /*Ensures the background color respects the border-radius*/
+}
+
+#left-sidebar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    font-size: 1rem;
+    text-decoration: underline transparent;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    transition: text-decoration-color 0.4s ease-in-out;
+    color: black;
+}
+
+#left-sidebar a[href ="#home"]:hover {
+   text-decoration-color: #4834d4;
+}
+#left-sidebar a[href ="#about"]:hover {
+    text-decoration-color: #f9ca24;
+}
+#left-sidebar a[href ="#education"]:hover {
+    text-decoration-color: #eb4d4b;
+}
+#left-sidebar a[href ="#skills"]:hover {
+    text-decoration-color: #e056fd;
+}
+#left-sidebar a[href ="#experience"]:hover {
+    text-decoration-color: #2ed573;
+}
+#left-sidebar a[href ="#projects"]:hover {
+    text-decoration-color: #6F1E51;
+}
+#left-sidebar a[href ="#contacts"]:hover {
+    text-decoration-color: #535c68;
+}
+
+#main-content {
+    display: flex;
+    flex-grow: 1; /*Fill the space between sidebars*/
+    flex-direction: column;
+    margin: 0.5rem;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+#main-content section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; /*Adjust the width match with the sidebar width*/
+    min-height: 100vh;/*Same width as the sidebar*/
+    padding: 1rem;
+}
+
+
+
+#right-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 20rem;
+    margin: 0.5rem 0 0.5rem 0;
+    height: calc(100vh - 1rem); /* full height minus margin */
+    top: 0;
+    z-index: 1000
+    ;
+}
+
+#detail-card-1 {
+    background-color: black;
+    border-radius: 12px;
+    box-shadow: 0 0 30px 3px rgba(29, 1, 1, 0.5);
+    height: 45%;
+    padding: 0.5rem;
+}
+
+#detail-card-2 {
+    background-color: black;
+    border-radius: 12px;
+    box-shadow: 0 0 30px 3px rgba(29, 1, 1, 0.5);
+    height: 45%;
+    padding: 0.5rem;
+}
+
+.home-img {
+    display: block;
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+}
+#home {
+   
+}
+
+#home p {
+    margin-top: 0;
+    padding: 1px;
+    background-color: #0984e3;
+    width: 80%;
+}
+#home h2{
+    width: auto;
+    height: 3rem;
+    font-size: 3rem;
+    background-color: whitesmoke;
+    /*           horizontal vertical blur-radius color*/
+    text-shadow: 3px 3px 5px #636e72;
+}

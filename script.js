@@ -188,5 +188,98 @@ document.addEventListener('DOMContentLoaded', () => {
     mainContent.addEventListener('scroll', scrollActive);
     // Run the function once on load to highlight the correct link initially
     scrollActive();
+
+    //Dowload Resume Button
+    document.getElementById("dowload-btn").addEventListener('click', function () {
+        const link = document.createElement("a");
+        link.href = "/file-link/Thien_Quy_Pham_Resume (2).pdf";
+        link.download = "Thien_Quy_Pham_Resume";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+
+    //Data for Skill Details modal
+    const skillDetails = {
+        python: {
+                title: 'Python Programming',
+                description: 'Proficient in Python for automation tasks, including working with CSV files and developing games using Pygame (e.g., Snake Game, Flappy Bird). Familiar with libraries such as Pandas, NumPy, and Flask for scripting and web development.'
+        },
+        cpp: {
+                title: 'C++ Programming',
+                description: 'Experienced in using C++ for algorithmic problem-solving, including dynamic programming, linear data structures, trees, and Huffman coding. Strong understanding of memory management and performance optimization.'
+            },
+        java: {
+                title: 'Java Development',
+                description: 'Skilled in object-oriented programming with Java. Worked with non-linear data structures such as linked lists, stacks, and queues, as well as array sorting algorithms. Experienced in development environments like Eclipse and IntelliJ IDEA.'
+        },
+        htmlcss: {
+                title: 'HTML & CSS',
+                description: 'Capable of crafting responsive and accessible web layouts using semantic HTML and modern CSS techniques, including Flexbox and Grid. Proficient in creating clean, structured designs.'
+        },
+        js: {
+                title: 'JavaScript',
+                description: 'Experienced in JavaScript for interactive front-end development. Experienced with ES6+ features, DOM manipulation, and creating dynamic UI behavior in web applications.'
+        },
+        git: {
+                title: 'Git Version Control',
+                description: 'Experienced with Git for managing codebases in individual and collaborative environments. Proficient in common Git workflows, branching strategies, and troubleshooting merge conflicts.'
+        },
+        json: {
+                title: 'JSON',
+                description: 'Adept at using JSON for structured data exchange between front-end and back-end systems. Skilled in parsing, manipulating, and integrating JSON data in web and scripting contexts.'
+        },
+        github: {
+                title: 'GitHub',
+                description: 'Experienced in using GitHub for version control, collaboration, and project management. Proficient in creating repositories, managing branches, pull requests, and using GitHub Issues and Actions for workflow automation.'
+        },
+        msoffice: {
+                title: 'Microsoft Office Suite',
+                description: 'Proficient in Microsoft Office tools including Word, Excel, and PowerPoint. Skilled in creating professional documents, analyzing data with formulas and charts in Excel, and delivering impactful presentations.'
+        }
+    };
+
+    const modal = document.getElementById('modal');
+    const modalContent = document.querySelector('.modal-content');
+
+    window.openModal = (skillKey) => {
+        if (!skillDetails[skillKey]) {
+            console.error('Skill key not found: ', skillKey);
+            return;
+        }
+
+        const details = skillDetails[skillKey];
+        //Reset contents
+        modalContent.innerHTML = `<span class="close" onclick ="closeModal()">&times;</span>`;
+        
+        const tittleElement = document.createElement('h3');
+        tittleElement.textContent = details.title;
+        tittleElement.style.marginBottom = `1rem`;
+        tittleElement.style.color = 'var(--primary-color)';
+        
+        const descriptionElement = document.createElement('p');
+        descriptionElement.textContent = details.description;
+        descriptionElement.style.lineHeight = '1.6';
+        
+        const linkElement = document.createElement('a');
+        linkElement.textContent = details.link;
+        linkElement.style.marginTop = `1rem`;
+        linkElement.style.textDecoration = 'none';
+
+        modalContent.appendChild(tittleElement);
+        modalContent.appendChild(descriptionElement);
+        modalContent.appendChild(linkElement);
+        modal.classList.add('visible');
+    }
+
+    window.closeModal = () => {
+        modal.classList.remove('visible');
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
 });
 

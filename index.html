@@ -20,7 +20,6 @@
             </a>
             <a href="#about"><i class="fa-solid fa-user"></i> <span class="link-text">About</span></a>
             <a href="#education"><i class="fa-solid fa-graduation-cap"></i> <span class="link-text">Education</span></a>
-            <a href="#skills"><i class="fa-solid fa-star"></i> <span class="link-text">Skills</span></a>
             <a href="#experience"><i class="fa-solid fa-briefcase"></i> <span class="link-text">Experience</span></a>
             <a href="#projects"><i class="fa-solid fa-lightbulb"></i> <span class="link-text">Projects</span></a>
             <a href="#contacts"><i class="fa-solid fa-envelope"></i> <span class="link-text">Contact</span></a>
@@ -29,7 +28,7 @@
         <main id="main-content">
             <section id="home">
                 <h2> Greetings! Welcome to my website</h2>
-                <p class="underline"> </p>
+                <div class="underline"> </div>
                 <p class="note"> |- You can drag the Student ID Card -|</p>
 
                 <div class="id-card-wrapper">
@@ -53,36 +52,101 @@
 
             <section id="about">
                     <h2> About me </h2>
-                    <p class="underline"> </p>
+                    <div class="main-ab">
+                        <div class="ab-img-wrapper">
+                            <div class="img-holder">
+                                <img src="/images/About-photo.jpg">
+                            </div>
+                        </div>
+
+                        <div class="ab-content-wrapper">
+                            <div class="ab-left-column">
+                                <div class="status-holder">
+                                    <p> • Available for Internship</p>
+                                </div>
+                                <div class="file-container">
+                                    <button id="dowload-btn" >
+                                        <i class="fa fa-download"></i><span>Download Resume</span>
+                                    </button>
+                                </div>
+                                <div class="ab-text">
+                                     Hi, I’m a Computer Science student who’s passionate about learning and growing every day. 
+                                     I enjoy tackling challenges, picking up new skills, and staying curious. 
+                                     I’m currently looking for a co-op to gain real-world experience. 
+                                     Outside of tech, I love music and sports to keep life balanced.
+                                     <br><br>
+                                     If you're looking for someone who’s curious, committed, 
+                                     and always ready to learn, let’s connect!
+                                </div>
+                            </div>
+                            <div class="ab-right-column">
+                                <div class="skills-container">
+                                    <div class="skill" onclick="openModal('python')">
+                                        <i class="fab fa-python"></i>
+                                        <span>Python</span>
+                                    </div>
+                                    <div class="skill" onclick="openModal('cpp')">
+                                        <i class="fas fa-code"></i>
+                                        <span>C++</span>
+                                    </div>
+                                    <div class="skill" onclick="openModal('java')">
+                                        <i class="fab fa-java"></i>
+                                        <span>Java</span>
+                                    </div>
+                                    <div class="skill" onclick="openModal('htmlcss')">
+                                        <i class="fab fa-html5"></i>
+                                        <span>HTML/CSS</span>
+                                    </div>
+                                    <div class="skill" onclick="openModal('js')">
+                                        <i class="fab fa-js-square"></i>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div class="skill" onclick="openModal('git')">
+                                        <i class="fab fa-git-alt"></i>
+                                        <span>Git</span>
+                                    </div>
+                                    <div class="skill" onclick="openModal('github')">
+                                        <i class="fab fa-github"></i>
+                                        <span>GitHub</span>
+                                    </div>
+                                    <div class="skill" onclick="openModal('JSON')">
+                                        <i class="fas fa-database"></i>
+                                        <span>JSON</span>
+                                    </div>
+                                    <div class="skill" onclick="openModal('office')">
+                                        <i class="fas fa-file"></i>
+                                        <span>MS Office</span>
+                                    </div>
+                                </div>
+                                <div class="cerficates-container" onclick=""></div>
+                            </div>
+                        </div>
+                    </div>
             </section>
 
             <section id="education">
                 <h2> Education here </h2>
-                <p class="underline"> </p>
-            </section>
-
-            <section id="skills">
-                <h2> Skills here </h2>
-                <p class="underline"> </p>
             </section>
 
             <section id="experience">
                 <h2> Experience here </h2>
-                <p class="underline"> </p>
             </section>
 
             <section id="projects">
                 <h2> My Projects here </h2>
-                <p class="underline"> </p>
             </section>
 
             <section id="contacts">
                 <h2> Contacts here </h2>
-                <p class="underline"> </p>
             </section>
         </main>
     </div>
-
+    <div class="modal" id="modal"> 
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

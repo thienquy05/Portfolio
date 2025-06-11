@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Dowload Resume Button
     document.getElementById("dowload-btn").addEventListener('click', function () {
         const link = document.createElement("a");
-        link.href = "/file-link/Thien_Quy_Pham_Resume (2).pdf";
+        link.href = "file-link/Thien_Quy_Pham_Resume (2).pdf";
         link.download = "Thien_Quy_Pham_Resume";
         document.body.appendChild(link);
         link.click();

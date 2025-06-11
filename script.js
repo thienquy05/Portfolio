@@ -203,15 +203,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillDetails = {
         python: {
                 title: 'Python Programming',
-                description: 'Proficient in Python for automation tasks, including working with CSV files and developing games using Pygame (e.g., Snake Game, Flappy Bird). Familiar with libraries such as Pandas, NumPy, and Flask for scripting and web development.'
+                description: 'Proficient in Python for automation tasks, including working with CSV files and developing games using Pygame (e.g., Snake Game, Flappy Bird).',
+                link: 'https://github.com/thienquy05/Small_Project_Python'
         },
         cpp: {
                 title: 'C++ Programming',
-                description: 'Experienced in using C++ for algorithmic problem-solving, including dynamic programming, linear data structures, trees, and Huffman coding. Strong understanding of memory management and performance optimization.'
+                description: 'Experienced in using C++ for algorithmic problem-solving, including dynamic programming, linear data structures, trees, and Huffman coding. Strong understanding of memory management and performance optimization.',
+                link: 'https://github.com/thienquy05/Cpp_Project'
             },
         java: {
                 title: 'Java Development',
-                description: 'Skilled in object-oriented programming with Java. Worked with non-linear data structures such as linked lists, stacks, and queues, as well as array sorting algorithms. Experienced in development environments like Eclipse and IntelliJ IDEA.'
+                description: 'Skilled in object-oriented programming with Java. Worked with non-linear data structures such as linked lists, stacks, and queues, as well as array sorting algorithms. Experienced in development environments like Eclipse.'
         },
         htmlcss: {
                 title: 'HTML & CSS',
@@ -219,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         js: {
                 title: 'JavaScript',
-                description: 'Experienced in JavaScript for interactive front-end development. Experienced with ES6+ features, DOM manipulation, and creating dynamic UI behavior in web applications.'
+                description: 'Experienced in JavaScript for interactive front-end development, and creating dynamic UI behavior in web applications.'
         },
         git: {
                 title: 'Git Version Control',
@@ -251,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const details = skillDetails[skillKey];
         //Reset contents
         modalContent.innerHTML = `<span class="close" onclick ="closeModal()">&times;</span>`;
-        
+
         const tittleElement = document.createElement('h3');
         tittleElement.textContent = details.title;
         tittleElement.style.marginBottom = `1rem`;
@@ -261,14 +263,36 @@ document.addEventListener('DOMContentLoaded', () => {
         descriptionElement.textContent = details.description;
         descriptionElement.style.lineHeight = '1.6';
         
-        const linkElement = document.createElement('a');
-        linkElement.textContent = details.link;
-        linkElement.style.marginTop = `1rem`;
-        linkElement.style.textDecoration = 'none';
-
         modalContent.appendChild(tittleElement);
         modalContent.appendChild(descriptionElement);
-        modalContent.appendChild(linkElement);
+        if (details.link) {
+            const linkElement = document.createElement('a');
+            linkElement.href = details.link;
+            linkElement.target = '_blank';
+            linkElement.textContent = 'View Project'
+
+            //Style link as the button
+            linkElement.style.display = 'inline-block';
+            linkElement.style.marginTop = '1rem';
+            linkElement.style.marginBottom = '1rem';
+            linkElement.style.padding = '10px 15px';
+            linkElement.style.backgroundColor = 'var(--primary-color)';
+            linkElement.style.color = 'white';
+            linkElement.style.textDecoration = 'none';
+            linkElement.style.borderRadius = '5px';
+            linkElement.style.transition = 'background-color 0.3s';
+            linkElement.onmouseover = () => linkElement.style.backgroundColor = '#004080';
+            linkElement.onmouseout = () => linkElement.style.backgroundColor = 'var(--primary-color)';
+
+            //Alert for directing to another page
+            linkElement.onclick = () => {
+                alert('This link would go to different page!');
+            }
+
+            modalContent.appendChild(linkElement);
+        }
+        
+
         modal.classList.add('visible');
     }
 

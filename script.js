@@ -1,5 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+
     //Hamburger Menu
     const menuToggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('#left-sidebar');
@@ -42,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
     //Dragable Student ID Card
     const cardWrapper = document.querySelector('.id-card-wrapper');
     const dragContainer = document.querySelector('#home');
@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const drag = (clientX, clientY) => {
         if (!isDragging) return;
 
-        
         //Get container boundaries
         const containerRect = dragContainer.getBoundingClientRect();
         const cardRect = cardWrapper.getBoundingClientRect();
@@ -90,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         //Calculate the new position of the card
         let newX = clientX - containerRect.left - offsetX;
         let newY = clientY - containerRect.top - offsetY;
-
 
         //Constrain the card within the container
         if (newX < 0) newX = 0;
@@ -238,6 +236,21 @@ document.addEventListener('DOMContentLoaded', () => {
         msoffice: {
                 title: 'Microsoft Office Suite',
                 description: 'Proficient in Microsoft Office tools including Word, Excel, and PowerPoint. Skilled in creating professional documents, analyzing data with formulas and charts in Excel, and delivering impactful presentations.'
+        },
+        it: {
+            title: 'IT Automation with Python',
+            description: `
+                    <strong>Core Technical Skills:</strong>
+                    <br>
+                    <ul>
+                        <li>Python Scripting: Automating tasks, managing system operations, and handling data with custom scripts.</li>
+                        <li>Operating System Interaction: Performing file and directory operations using os and shutil; executing system commands with subprocess.</li>
+                        <li>Text & Data Processing: Advanced pattern matching with Regular Expressions (Regex); working with data formats like JSON, CSV, and YAML.</li>
+                        <li>Web Services & APIs: Interacting with RESTful APIs using the requests library; parsing HTML content with BeautifulSoup.</li>
+                        <li>Version Control: Proficient in Git for version tracking and workflow management; experienced with GitHub collaboration tools.</li>
+                        <li>Troubleshooting & Debugging: Analyzing logs, implementing error handling, and writing maintainable, debuggable code.</li>
+                    </ul>
+                    `
         }
     };
 
@@ -260,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tittleElement.style.color = 'var(--primary-color)';
         
         const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = details.description;
+        descriptionElement.innerHTML = details.description;
         descriptionElement.style.lineHeight = '1.6';
         
         modalContent.appendChild(tittleElement);

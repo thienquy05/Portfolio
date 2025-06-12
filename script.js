@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('#left-sidebar');
     const sidebarLinks = document.querySelectorAll('#left-sidebar a');
     const mainContent = document.querySelector('#main-content');
+    const scrollUpBtn = document.getElementById('scroll-up-btn');
     
     //Set the side bar to visible on Click
     const toggleMenu = () => {
@@ -181,6 +182,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add('active');
             }
         });
+
+        //Scroll Up Button in Mobile
+        const isMobile = window.innerWidth <= 768;
+
+        if (isMobile && mainContent.scrollTop > 200) {
+            scrollUpBtn.classList.add("visible");
+        }
+        else {
+            scrollUpBtn.classList.remove("visible");
+        }
     };
     // Attach the listener: Run the scrollActive function every time a scroll happens
     mainContent.addEventListener('scroll', scrollActive);
@@ -191,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("dowload-btn").addEventListener('click', function () {
         const link = document.createElement("a");
         link.href = "file-link/Thien_Quy_Pham_Resume (2).pdf";
-        link.download = "Thien_Quy_Pham_Resume";
+        link.download = "ThienQuyPham_Resume";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -211,11 +222,13 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         java: {
                 title: 'Java Development',
-                description: 'Skilled in object-oriented programming with Java. Worked with non-linear data structures such as linked lists, stacks, and queues, as well as array sorting algorithms. Experienced in development environments like Eclipse.'
+                description: 'Skilled in object-oriented programming with Java. Worked with non-linear data structures such as linked lists, stacks, and queues, as well as array sorting algorithms. Experienced in development environments like Eclipse.',
+                link: 'https://github.com/thienquy05/Banks/tree/main/BankProgramming/src'
         },
         htmlcss: {
                 title: 'HTML & CSS',
-                description: 'Capable of crafting responsive and accessible web layouts using semantic HTML and modern CSS techniques, including Flexbox and Grid. Proficient in creating clean, structured designs.'
+                description: 'Capable of crafting responsive and accessible web layouts using semantic HTML and modern CSS techniques, including Flexbox and Grid. Proficient in creating clean, structured designs.',
+                link: 'https://thienquy05.github.io/QRCodeGenerator/'
         },
         js: {
                 title: 'JavaScript',
@@ -227,7 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         json: {
                 title: 'JSON',
-                description: 'Adept at using JSON for structured data exchange between front-end and back-end systems. Skilled in parsing, manipulating, and integrating JSON data in web and scripting contexts.'
+                description: 'Adept at using JSON for structured data exchange between front-end and back-end systems. Skilled in parsing, manipulating, and integrating JSON data in web and scripting contexts.',
+                link: 'https://github.com/thienquy05/BeveragesMenu/blob/main/beverage_menu.py'
         },
         github: {
                 title: 'GitHub',
@@ -305,7 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
             modalContent.appendChild(linkElement);
         }
         
-
         modal.classList.add('visible');
     }
 
@@ -318,5 +331,6 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
 });
 

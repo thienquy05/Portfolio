@@ -29,6 +29,38 @@ body {
     width: 100%;
     position: relative;
 }
+
+#scroll-up-btn {
+    display: block;
+    right: 10px;
+    bottom: 5px;
+    z-index: 1110;
+    position: absolute;
+    border-radius: 50%;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#scroll-up-btn a {
+    padding: 13px 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+}
+
+#scroll-up-btn.visible {
+    pointer-events: auto;
+    opacity: 0.8;
+}
+
 .menu-toggle {
     display: none; /*Hidden by default */;
     position: fixed;
@@ -123,7 +155,7 @@ body {
     scrollbar-width: none;
 }
 
-#main-content section {
+#main-content section:not(#home) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -486,6 +518,15 @@ section:not(#home) > h2{
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+.modal-content ul {
+    padding-left: 20px;
+    margin-top: 0.5rem;
+}
+
+.modal-content li {
+    margin-bottom: 0.5rem;
+}
+
 .close {
     position: absolute;
     top: 10px; right: 20px;
@@ -564,10 +605,12 @@ section:not(#home) > h2{
     body {
         overflow: visible; /* Allow body to scroll normally */
     }
+
     #container {
         flex-direction: column;
         height: auto;
     }
+
     .menu-toggle {
         display: block; /*Show the hamburger button */
         margin-top: 0;

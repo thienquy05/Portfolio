@@ -466,7 +466,7 @@ section:not(#home) > h2{
     background-color: var(--bg-color);
     border: 1px solid #ddd;
     border-radius: 10px;
-    width: 95px; /* Smaller width */
+    width: 85px; /* Smaller width */
     padding: 10px 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -545,7 +545,7 @@ section:not(#home) > h2{
 }
 
 .certificate-container .skill {
-    width: calc(100% - 85px);
+    width: calc(100% - 90px);
     height: auto;
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -655,6 +655,9 @@ section:not(#home) > h2{
         height: 100vh; /* Keep home section full height */
     }
 
+    .underline {
+        margin: 0 0 0.5rem 0;
+    }
     .note, #home h2 {
         padding: 0 1rem;
     }

@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const linkElement = document.createElement('a');
             linkElement.href = details.link;
             linkElement.target = '_blank';
-            linkElement.textContent = 'View Source'
+            linkElement.textContent = 'View Project'
 
             //Style link as the button
             linkElement.style.display = 'inline-block';

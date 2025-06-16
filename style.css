@@ -157,7 +157,7 @@ body {
     scrollbar-width: none;
 }
 
-#main-content section:not(#home) {
+#main-content section:not(#home, #education) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -571,7 +571,6 @@ section:not(#home) > h2{
 
 #education {
     height: auto;
-    min-height: 100vh;
 }
 
 .main-edu {
@@ -677,6 +676,186 @@ section:not(#home) > h2{
     font-weight: 500;
 }
 
+#experience {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1rem;
+    width: 100%;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Max width for large screens */
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 10px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    opacity: 0.6;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    background-color: inherit;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.6s ease-out;
+    transform: translateY(50px);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+/* Creating the arrow pointing from the card to the timeline line */
+.timeline-item.left::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 30px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--secondary-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--secondary-color);
+}
+
+.timeline-item.right::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 30px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid var(--secondary-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--secondary-color) transparent transparent ;
+}
+
+/* The decorative of circle on the timeline for each item*/
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--secondary-color);
+    border: 4px solid var(--secondary-color);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.timeline-item.right::after {
+    left: -10px;
+}
+
+/* Fill in the circle when the item is visible*/
+.timeline-item.visible::after {
+    background-color: var(--secondary-color);
+}
+
+/* The content card for each job*/
+.timeline-content {
+    padding: 20px 30px;
+    margin-top: 15px;
+    background-color: var(--bg-color);
+    position: relative;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.exp-img-holder {
+    flex-shrink: 0;
+}
+
+.exp-img-holder img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 1px;
+    background-color: var(--bg-color);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.exp-text-holder {
+    flex-grow: 1;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.title h3 {
+    font-size: 1.3rem;
+    color: #00274C;
+    margin-bottom: 4px;
+}
+
+.title p {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.information ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.information li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+.information li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+}
 
 @keyframes loop {
     0% {
@@ -819,5 +998,53 @@ section:not(#home) > h2{
 
     .main-edu {
         gap: 0;
+    }
+
+    .scroll-track {
+        display: inline-flex;
+        animation: loop 15s linear infinite;
+    }
+
+    .edu-text {
+        font-size: 1rem;
+    }
+    @keyframes loop {
+        0% {
+            transform: translateX(10%);
+        }
+
+        100% {
+            transform: translateX(-90%);
+        }
+    }
+
+    .timeline-content {
+        flex-direction: column;
+        width: 120%;
+    }
+    .timeline::after {
+        left: 5px;
+    }
+
+    .timeline-item {
+        width: 100%;
+    }
+
+    /*Align all items to the left */
+    .timeline-item.left, .timeline-item.right {
+        left: 0;
+    }
+
+    /* Adjust the arrow to point left */
+    .timeline-item.left::before, .timeline-item.right::before {
+        left: 25px;
+        border: medium solid var(--secondary-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--secondary-color) transparent transparent;
+    }
+
+    /* Position the circle on the left timeline*/
+    .timeline-item.left::after, .timeline-item.right::after {
+        left: -5px;
     }
 }

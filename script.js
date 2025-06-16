@@ -331,6 +331,32 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+    
+    //Add the visible class to timeline items when they scroll into the view
+    const timelineItems = document.querySelectorAll('.timeline-item');
 
+    //This function checks if an element is in the viewport
+    const isElementInViewport = (el) => {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top < window.innerHeight && rect.bottom >= 0
+        );
+    };
+
+    //This function loops through items and adds the class if they are visible
+    const callbackFunc = () => {
+        for (let i = 0; i < timelineItems.length; i++ ) {
+            if (isElementInViewport(timelineItems[i])) {
+                timelineItems[i].classList.add('visible');
+            }
+        }
+    };
+
+    //Listen for scroll events to trigger the function
+    const scrollContainer = document.getElementById('main-content') || window;
+    scrollContainer.addEventListener('scroll', callbackFunc);
+
+    //Also run the function on page load for any items already in view
+    window.addEventListener('load', callbackFunc);
 });
 

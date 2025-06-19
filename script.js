@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     //Add the visible class to timeline items when they scroll into the view
-    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineItems = document.querySelectorAll('.timeline-item, .effect');
 
     //This function checks if an element is in the viewport
     const isElementInViewport = (el) => {

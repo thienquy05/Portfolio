@@ -337,6 +337,14 @@ section:not(#home) > h2{
     max-width: 1200px; /* Max width for large screens */
     position: relative;
     margin-top: 95px; /* Make space for the overlapping image */
+    transition: opacity 0.3s ease-in-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.effect.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .ab-img-wrapper {
@@ -580,6 +588,14 @@ section:not(#home) > h2{
     align-items: center;
     margin-top: 20px;
     width: 100%;
+    transition: opacity 0.3s ease-in-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.effect.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .edu-school-container {
@@ -871,6 +887,14 @@ section:not(#home) > h2{
     gap: 2rem;
     padding: 1rem;
     align-items: center;
+    transition: opacity 0.3s ease-in-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.effect.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card {
@@ -879,6 +903,14 @@ section:not(#home) > h2{
     box-shadow: var(--box-shadow);
     border-radius: 0.5rem;
     transition: transform 0.3 ease, var(--box-shadow) 0.3 ease;
+    transition: opacity 0.3s ease-in-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.effect.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card:hover {
@@ -958,6 +990,7 @@ section:not(#home) > h2{
     background-color: #8BC4F1;
     color: var(--text-color);
 }
+
 .detail-btn {
     width: 100%;
     background-color: #25CCF7;
@@ -976,6 +1009,67 @@ section:not(#home) > h2{
     color: var(--bg-color);
 }
 
+.social-menu {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    margin-top: 10%;
+    border-radius: 9999px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.6s ease-out;
+    transform: translateY(50px);
+}
+
+.social-menu.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 2rem;
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.icon-wrapper:hover .icon {
+    transform: scale(1.1);
+    opacity: 1.1;
+}
+
+.pop-up-text {
+    position: absolute;
+    top: -50px;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: var(--text-size);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease transform 0.3s ease;
+    pointer-events: none;
+}
+
+.icon-wrapper:hover .pop-up-text {
+    opacity: 1;
+    transform: translateY(0);
+}
 /* === RESPONSIVE STYLES === */
 
 /*For Tablets */
@@ -1167,5 +1261,20 @@ section:not(#home) > h2{
 
     .project-container {
         grid-template-columns: repeat(1,1fr);
+    }
+
+    .social-menu {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        border-radius: 20px;
+        gap: 3rem;
+    }
+
+    .icon-wrapper {
+        justify-content: space-evenly;
+    }
+
+    .pop-up-text {
+        top: -45px;
     }
 }

@@ -560,20 +560,33 @@ section:not(#home) > h2{
     text-align: center;
 }
 
+
 .certificate-container .skill {
-    width: calc(100% - 90px);
-    height: auto;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--bg-color); 
+    border: 1px solid #ddd;           
+    border-radius: 10px;              
+    width: 170px;                      
+    height: 170px;                     /* Adjust to content */
+    padding: 5px;                
+    box-shadow: 2px 2px 10px rgba(245, 245, 245, 0.5); 
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
 }
 
-.certificate-container .skill p {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    font-weight: 600;
-}
+
 .certificate-container .skill:hover {
-    color: var(--primary-color);
-    background-color: var(--bg-color);
+    background: var(--secondary-color); 
+    transform: scale(1.05);           
+    color: initial; /* Resets any old text-color-on-hover */
+}
+
+/* This styles the badge image itself to fit nicely */
+#cert-badge-img {
+    width: 160px; /* Fill the container's padding */
+    height: 160px;
+    display: block;
+    border-radius: 5px; 
 }
 
 #education {

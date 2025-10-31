@@ -252,19 +252,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 description: 'Proficient in Microsoft Office tools including Word, Excel, and PowerPoint. Skilled in creating professional documents, analyzing data with formulas and charts in Excel, and delivering impactful presentations.'
         },
         it: {
-            title: 'IT Automation with Python',
+            title: 'CYBERSECURITY',
             description: `
                     <strong>Core Technical Skills:</strong>
                     <br>
                     <ul>
-                        <li>Python Scripting: Automating tasks, managing system operations, and handling data with custom scripts.</li>
-                        <li>Operating System Interaction: Performing file and directory operations using os and shutil; executing system commands with subprocess.</li>
-                        <li>Text & Data Processing: Advanced pattern matching with Regular Expressions (Regex); working with data formats like JSON, CSV, and YAML.</li>
-                        <li>Web Services & APIs: Interacting with RESTful APIs using the requests library; parsing HTML content with BeautifulSoup.</li>
-                        <li>Version Control: Proficient in Git for version tracking and workflow management; experienced with GitHub collaboration tools.</li>
-                        <li>Troubleshooting & Debugging: Analyzing logs, implementing error handling, and writing maintainable, debuggable code.</li>
+                        <li>Completed hands-on experience with hands-on training in threat detection, network security, and incident response.</li>
+                        <li>Gained practical experience using tools like Wireshark, Splunk, Linux, and command-line utilities for log analysis and monitoring.</li>
+                        <li>Learned core concepts including the CIA triad, risk management, and security frameworks like NIST and ISO/IEC.</li>
+                        <li>Developed foundational skills in SIEM, asset inventory, vulnerability scanning, and incident documentation.</li>
+                        <li>Prepared for entry-level roles such as Security Analyst or SOC Analyst through real-world labs and case study simulations.</li>
                     </ul>
-                    `
+                    `,
+            link: "https://www.coursera.org/account/accomplishments/specialization/6O9O5LP6RJFK"
         }
     };
 

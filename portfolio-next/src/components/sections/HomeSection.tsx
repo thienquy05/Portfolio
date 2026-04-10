@@ -6,7 +6,7 @@ import { TbRadar } from "react-icons/tb";
 
 export default function HomeSection() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#050505]">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#050505] py-24 lg:py-0">
       {/* Target Crosshair Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_80%,transparent_100%)] opacity-20 pointer-events-none" />
       
@@ -37,7 +37,7 @@ export default function HomeSection() {
              <span className="text-xs font-serif font-black tracking-widest uppercase">CLASS-A OPERATIVE LOCATED</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight mb-6 uppercase">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-tight tracking-tight mb-6 uppercase">
             <span className="text-sm font-mono text-secondary tracking-widest block mb-2 opacity-80">// DIRECTIVE_ASSIGNMENT:</span>
             Cybersecurity <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200 drop-shadow-[0_0_10px_rgba(255,210,0,0.8)]">Analyst</span><br/>
             &amp; Engineer

@@ -56,12 +56,12 @@ export default function HomeSection() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4 w-full sm:w-auto mt-4">
-            <a href="#projects" className="flex-1 sm:flex-none text-center px-8 py-4 bg-secondary/10 text-secondary font-mono font-bold rounded-sm border border-secondary hover:bg-secondary hover:text-black transition-all shadow-[0_0_15px_rgba(255,210,0,0.2)] hover:shadow-[0_0_30px_rgba(255,210,0,0.6)] uppercase tracking-widest relative overflow-hidden group">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">
+            <a href="#projects" className="w-full sm:w-auto text-center px-8 py-4 bg-secondary/10 text-secondary font-mono font-bold rounded-sm border border-secondary hover:bg-secondary hover:text-black transition-all shadow-[0_0_15px_rgba(255,210,0,0.2)] hover:shadow-[0_0_30px_rgba(255,210,0,0.6)] uppercase tracking-widest relative overflow-hidden group">
               <div className="absolute inset-0 bg-secondary/30 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
               <span className="relative z-10 flex items-center justify-center gap-2"><FaFolderOpen className="mb-0.5" /> Access Case Files</span>
             </a>
-            <a href="#about" className="flex-1 sm:flex-none text-center px-8 py-4 bg-black border border-white/20 text-white font-mono font-bold rounded-sm hover:bg-white/5 hover:border-secondary/50 transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+            <a href="#about" className="w-full sm:w-auto text-center px-8 py-4 bg-black border border-white/20 text-white font-mono font-bold rounded-sm hover:bg-white/5 hover:border-secondary/50 transition-all uppercase tracking-widest flex items-center justify-center gap-2">
               <FaSearch className="text-secondary mb-0.5" /> Decrypt Dossier
             </a>
           </div>
@@ -120,7 +120,7 @@ export default function HomeSection() {
                   <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight font-serif mt-2 text-shadow-sm">Thien Quy</h3>
                   <p className="text-secondary font-mono text-[11px] sm:text-xs mt-3 flex items-center gap-2 font-bold tracking-widest">
                     <span className="w-2 h-2 bg-secondary rounded-full animate-ping" />
-                    STATUS: SECURING PERIMETER
+                    STATUS: SEEKING INTERNSHIP
                   </p>
                 </div>
               </div>

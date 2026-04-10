@@ -105,7 +105,7 @@ export default function ExperienceSection() {
       <div className="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl w-full z-10 relative">
-        <div className="flex flex-col items-center mb-24">
+        <div className="flex flex-col items-center mb-16 md:mb-32">
            <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -140,7 +140,7 @@ export default function ExperienceSection() {
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.1 }}
-                  className={`flex flex-col md:flex-row w-full items-center relative group md:h-72`}
+                  className={`flex flex-col md:flex-row w-full items-center relative group md:h-[28rem]`}
                 >
                   
                   {/* Timeline Connection Dot (Network Node) */}
@@ -152,7 +152,7 @@ export default function ExperienceSection() {
                   <div className={`hidden md:block absolute top-1/2 w-[calc(50%-4rem)] h-px bg-gradient-to-r ${isEven ? 'from-transparent to-secondary/30 left-0' : 'from-secondary/30 to-transparent right-0'} z-0 group-hover:h-[2px] transition-all`} />
 
                   {/* Operational Log Card */}
-                  <div className={`w-[calc(100%-4.5rem)] ml-auto md:w-[calc(50%-4rem)] md:ml-0 md:absolute md:top-1/2 md:-translate-y-1/2 ${isEven ? 'md:left-0 pr-8' : 'md:right-0 pl-8'} group-hover:z-50 transition-all duration-300`}>
+                  <div className={`w-[calc(100%-4.5rem)] ml-auto md:w-[calc(50%-4rem)] md:ml-0 md:absolute md:top-1/2 md:-translate-y-1/2 ${isEven ? 'md:left-0 md:pr-8' : 'md:right-0 md:pl-8'} group-hover:z-50 transition-all duration-300`}>
                     <div className={`relative w-full bg-[#0d0d0d] border border-white/10 p-1 rounded-2xl hover:border-secondary/30 transition-colors shadow-2xl`}>
                       
                       <div className="bg-black/90 rounded-xl p-6 md:p-8 relative overflow-hidden backdrop-blur-xl border-t border-secondary/50/50">
@@ -162,11 +162,11 @@ export default function ExperienceSection() {
                         </div>
                         
                         {/* Terminal Header */}
-                        <div className="absolute top-0 left-0 right-0 bg-black/60 border-b border-secondary/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20">
-                          <span className={`font-mono text-[10px] uppercase tracking-widest text-white/70 flex items-center gap-2`}>
+                        <div className="absolute top-0 left-0 right-0 bg-black/60 border-b border-secondary/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 overflow-hidden">
+                          <span className={`font-mono text-[10px] uppercase tracking-widest text-white/70 flex items-center gap-2 shrink-0`}>
                             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" /> CASE_FILE_{idx + 10}
                           </span>
-                          <span className={`inline-block px-2 py-0.5 rounded text-[9px] font-mono uppercase tracking-widest bg-secondary/10 text-secondary border border-secondary/50 shadow-[0_0_8px_rgba(255,210,0,0.2)]`}>
+                          <span className={`inline-block px-2 py-0.5 rounded text-[9px] font-mono uppercase tracking-widest bg-secondary/10 text-secondary border border-secondary/50 shadow-[0_0_8px_rgba(255,210,0,0.2)] whitespace-nowrap shrink-0 ml-2`}>
                             {exp.date}
                           </span>
                         </div>
@@ -191,7 +191,7 @@ export default function ExperienceSection() {
                             
                             <ul className="space-y-4">
                               {exp.details.map((detail, dIdx) => (
-                                <li key={dIdx} className="text-white/70 text-xs md:text-sm font-mono leading-relaxed flex items-start gap-3">
+                                <li key={dIdx} className="text-white/70 text-sm md:text-base font-mono leading-relaxed flex items-start gap-3">
                                   <span className="text-secondary opacity-70 mt-1 text-[10px]">■</span>
                                   <span>{detail}</span>
                                 </li>

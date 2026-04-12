@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaFingerprint, FaBriefcase, FaBook, FaFolderOpen, FaSatelliteDish, FaBars, FaTimes, FaUserShield } from "react-icons/fa";
+import { FaFingerprint, FaBriefcase, FaBook, FaFolderOpen, FaSatelliteDish, FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,22 +71,61 @@ export default function Navigation() {
         transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
         className={`fixed top-0 left-0 h-screen w-20 hover:w-64 bg-black/95 backdrop-blur-2xl border-r-2 border-secondary/20 transition-all duration-300 z-40 flex flex-col items-center py-10 overflow-hidden group shadow-[20px_0_40px_rgba(0,0,0,0.9)] ${isOpen ? 'translate-x-0' : '-translate-x-[150%] md:translate-x-0'}`}
       >
-        {/* Agency Badge Logo */}
+        {/* UNWANTED Dossier Logo */}
         <a 
           href="#home" 
           onClick={() => setActiveSection("home")}
-          className="mb-16 relative w-14 h-14 rounded-full flex flex-col items-center justify-center border border-secondary/30 transition-all group-hover:shadow-[0_0_25px_rgba(255,210,0,0.5)] group-hover:border-secondary bg-black overflow-hidden group/logo shrink-0"
+          className="mb-16 relative w-14 h-[72px] flex flex-col items-center justify-start border border-secondary/40 bg-[#0a0a0a] transition-all group-hover:shadow-[0_0_20px_rgba(255,210,0,0.5)] group-hover:border-secondary group/logo shrink-0"
+          style={{
+            // Torn bottom edge akin to a bounty poster/dossier
+            clipPath: 'polygon(0 0, 100% 0, 100% 92%, 92% 100%, 82% 95%, 70% 100%, 55% 92%, 40% 100%, 25% 95%, 15% 100%, 7% 93%, 0 100%)',
+          }}
         >
-          {/* Rotating scanner ring */}
-          <div className="absolute inset-1 border border-secondary/60 rounded-full border-dashed animate-[spin_8s_linear_infinite]" />
-          
-          {/* Inner ring */}
-          <div className="absolute inset-[6px] border border-secondary/20 rounded-full" />
-          
-          <FaUserShield className="text-secondary text-lg group-hover/logo:scale-110 transition-transform duration-300 z-10 drop-shadow-[0_0_8px_rgba(255,210,0,0.8)]" />
-          
-          {/* Scanning line across the badge */}
-          <div className="absolute top-0 w-full h-[1px] bg-secondary/80 shadow-[0_0_10px_rgba(255,210,0,1)] z-20 animate-[scan_2s_ease-in-out_infinite]" />
+          {/* Paper texture overlay / aging */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-black pointer-events-none" />
+
+          {/* Header - UNWANTED */}
+          <div className="w-full mt-1 flex flex-col items-center justify-center px-1">
+            <div className="w-full border-y border-secondary/60 py-[1.5px] flex justify-center items-center bg-secondary/5">
+              <span className="text-[7.5px] font-serif font-black tracking-tighter text-secondary scale-y-[1.15] drop-shadow-[0_1px_3px_rgba(255,210,0,0.6)]">
+                UNWANTED
+              </span>
+            </div>
+          </div>
+
+          {/* Picture Frame */}
+          <div className="relative w-[44px] h-[36px] mt-1 border border-secondary/50 bg-black overflow-hidden flex items-end justify-center rounded-sm">
+            {/* Background grid */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,210,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,210,0,0.05)_1px,transparent_1px)] bg-[size:4px_4px]" />
+            
+            {/* Custom SVG Detective/Operator Silhouette */}
+            <svg viewBox="0 0 100 100" className="absolute bottom-0 w-[110%] h-[110%] text-secondary/90 group-hover/logo:text-secondary group-hover/logo:scale-110 transition-transform duration-500 will-change-transform z-10 filter drop-shadow-[0_0_2px_rgba(255,210,0,0.4)]" fill="currentColor">
+              {/* Coat Shoulders */}
+              <path d="M20 100 C 20 70, 30 65, 50 65 C 70 65, 80 70, 80 100 Z" />
+              {/* Collar high */}
+              <path d="M35 65 L 45 85 L 50 80 L 55 85 L 65 65 Z" fill="#000" stroke="currentColor" strokeWidth="2" />
+              {/* Head Silhouette */}
+              <circle cx="50" cy="45" r="16" />
+              {/* Fedora Brim */}
+              <path d="M25 40 Q 50 25 75 40" stroke="currentColor" strokeWidth="4" fill="none" className="drop-shadow-md" />
+              {/* Fedora Top */}
+              <path d="M35 38 L 40 18 L 60 18 L 65 38 Z" />
+              {/* Cybernetic glowing eye/visor */}
+              <rect x="52" y="40" width="7" height="3" fill="#FFD200" className="animate-pulse" />
+              <rect x="54" y="45" width="3" height="1" fill="#FFD200" className="animate-pulse" />
+            </svg>
+
+            {/* Subtle scanline inside the photo for operator theme */}
+            <div className="absolute top-0 w-full h-[1px] bg-secondary/80 shadow-[0_0_8px_rgba(255,210,0,1)] z-20 animate-[scan_2s_ease-in-out_infinite]" />
+          </div>
+
+          {/* Footer - Target ID / Tag */}
+          <div className="w-full flex-1 flex flex-col justify-start items-center pt-0.5">
+            <span className="text-[3.5px] font-mono text-secondary/60 tracking-[0.2em] leading-tight">DOSSIER NO.</span>
+            <span className="text-[6px] font-mono font-bold text-secondary tracking-tighter drop-shadow-[0_0_2px_rgba(255,210,0,0.8)] mt-[0px]">
+              OP-0X99
+            </span>
+          </div>
         </a>
 
         {/* Central Connecting Line */}

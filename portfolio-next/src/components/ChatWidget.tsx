@@ -2,18 +2,36 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaUserSecret, FaTimes, FaNetworkWired } from "react-icons/fa";
-
-type Message = { role: "user" | "assistant"; content: string };
+import { FaUserSecret, FaTimes, FaNetworkWired, FaPaperPlane } from "react-icons/fa";
+import { useChat, UIMessage } from "@ai-sdk/react";
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: "CLASSIFIED INTERFACE SECURED. I am Xaibo, the system's lead detective node. What intelligence are you attempting to exploit today?" }
-  ]);
   const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const { messages: chatMessages, sendMessage, status } = useChat({
+    id: 'xaibo-chat',
+  });
+
+  const introMessage = {
+    id: 'intro',
+    role: 'assistant' as const,
+    parts: [{ type: 'text' as const, text: "CLASSIFIED INTERFACE SECURED. I am Xaibo, the system's lead detective node. What intelligence are you attempting to exploit today?" }]
+  };
+
+  const messages = chatMessages.length > 0 ? chatMessages : [introMessage];
+
+  // console.log("Chat Messages: ", messages);
+
+  const isLoading = status === 'streaming' || status === 'submitted';
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+    sendMessage({ text: input });
+    setInput('');
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -22,34 +40,6 @@ export default function ChatWidget() {
   useEffect(() => {
     if (isOpen) scrollToBottom();
   }, [messages, isOpen]);
-
-  const sendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-
-    const userMessage: Message = { role: "user", content: input };
-    setMessages((prev) => [...prev, userMessage]);
-    setInput("");
-    setIsLoading(true);
-
-    try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [...messages, userMessage] }),
-      });
-
-      if (!res.ok) throw new Error("Failed to fetch response from neural-net");
-
-      const data = await res.json();
-      setMessages((prev) => [...prev, data]);
-    } catch (error) {
-      console.error(error);
-      setMessages((prev) => [...prev, { role: "assistant", content: "[ERR_502] Relational database offline. Cannot retrieve requested intel." }]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -126,18 +116,38 @@ export default function ChatWidget() {
                     {msg.role === "user" ? (
                        <div className="flex flex-col">
                          <span className="text-[8px] text-secondary/50 uppercase tracking-widest mb-1">&gt; USER_QUERY</span>
-                         {msg.content}
+                         {msg.parts?.map((part, i) => part.type === 'text' ? <span key={i}>{part.text}</span> : null) || ''}
                        </div>
                     ) : (
                       <div className="flex flex-col">
                         <span className="text-[8px] text-white/30 uppercase tracking-widest mb-2 border-b border-white/5 pb-1">&gt; DETECTIVE_XAIBO_RESPONSE</span>
-                        {msg.content}
+                        {msg.parts?.map((part, i) => part.type === 'text' ? <span key={i}>{part.text}</span> : null) || ''}
                       </div>
                     )}
                   </div>
                 </div>
               ))}
               
+              {/* Suggested Queries */}
+              {chatMessages.length === 0 && !isLoading && (
+                <div className="flex flex-col gap-2 mt-4 items-end relative z-10">
+                  <span className="text-[8px] text-white/30 uppercase tracking-widest mr-1">&gt; SUGGESTED_QUERIES</span>
+                  {[
+                    "Tell me about Quy's background", 
+                    "What are Quy's core technical skills?", 
+                    "Does Quy require visa sponsorship?"
+                  ].map((suggestion, i) => (
+                    <button
+                      key={i}
+                      onClick={() => sendMessage({ text: suggestion })}
+                      className="text-[10px] text-right px-3 py-1.5 bg-black/40 border border-secondary/20 rounded-l-xl rounded-tr-xl text-emerald-400/80 hover:text-emerald-400 hover:bg-secondary/10 hover:border-secondary/50 transition-all uppercase max-w-[85%]"
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+              )}
+
               {/* Loading Scan */}
               {isLoading && (
                 <div className="flex justify-start relative z-10 ml-4">
@@ -152,7 +162,7 @@ export default function ChatWidget() {
             {/* Input Area */}
             <div className="p-4 bg-black border-t border-secondary/30 shrink-0 relative">
                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100%_4px] pointer-events-none" />
-              <form onSubmit={sendMessage} className="relative flex items-center z-10">
+              <form onSubmit={handleSubmit} className="relative flex items-center z-10">
                 <span className="text-secondary absolute left-4 font-bold select-none">&gt;</span>
                 <input
                   type="text"

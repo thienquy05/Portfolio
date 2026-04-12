@@ -17,26 +17,34 @@ export default function Icon() {
       // ImageResponse JSX element
       <div
         style={{
-          fontSize: 18,
           background: '#0a0a0a',
           width: '100%',
           height: '100%',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#FFD200',
-          fontWeight: 'black',
-          fontFamily: 'monospace',
-          borderRadius: '4px',
           border: '2px solid #FFD200',
-          position: 'relative'
+          position: 'relative',
+          // Mimic top right folded corner of a dossier
+          borderTopRightRadius: '10px',
         }}
       >
-        <div style={{ position: 'absolute', top: 2, right: 2, width: 4, height: 4, backgroundColor: '#FFD200', borderRadius: '50%' }} />
-        {/* Abstract Eye/Lens shape for an Operative Agent */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '20px', height: '10px', border: '2px solid #FFD200', borderRadius: '100%' }}>
-            <div style={{ width: '4px', height: '4px', backgroundColor: '#FFD200', borderRadius: '50%' }} />
+        {/* Detective Hat / Visor abstraction */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '4px' }}>
+          {/* Hat top */}
+          <div style={{ width: '12px', height: '6px', backgroundColor: '#FFD200', borderTopLeftRadius: '4px', borderTopRightRadius: '4px' }} />
+          {/* Hat brim */}
+          <div style={{ width: '20px', height: '2px', backgroundColor: '#FFD200' }} />
         </div>
+        {/* Glowing visor / eye */}
+        <div style={{ marginTop: '2px', display: 'flex', gap: '2px' }}>
+          <div style={{ width: '6px', height: '2px', backgroundColor: '#FFD200' }} />
+        </div>
+        
+        {/* Dossier Lines */}
+        <div style={{ marginTop: '3px', width: '16px', height: '1px', backgroundColor: '#FFD200', opacity: 0.5 }} />
+        <div style={{ marginTop: '2px', width: '10px', height: '1px', backgroundColor: '#FFD200', opacity: 0.5 }} />
       </div>
     ),
     {

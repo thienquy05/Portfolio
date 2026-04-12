@@ -37,10 +37,10 @@ export default function HomeSection() {
              <span className="text-xs font-serif font-black tracking-widest uppercase">CLASS-A OPERATIVE LOCATED</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-tight tracking-tight mb-6 uppercase">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6 uppercase">
             <span className="text-sm font-mono text-secondary tracking-widest block mb-2 opacity-80">// DIRECTIVE_ASSIGNMENT:</span>
-            Cybersecurity <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200 drop-shadow-[0_0_10px_rgba(255,210,0,0.8)]">Analyst</span><br/>
-            &amp; Engineer
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200 drop-shadow-[0_0_10px_rgba(255,210,0,0.8)]">Cybersecurity</span> Analyst<br/>
+            and <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200 drop-shadow-[0_0_10px_rgba(255,210,0,0.8)]">AI</span> Engineer
           </h1>
           
           <div className="font-mono text-sm md:text-base text-white/50 mb-10 max-w-lg leading-relaxed border-l-2 border-secondary/50 pl-4 space-y-3 relative">

@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 import { FaPython, FaCode, FaJava, FaHtml5, FaJsSquare, FaDatabase, FaGitAlt, FaGithub, FaFile, FaDownload, FaShieldAlt, FaRobot, FaNetworkWired, FaFingerprint, FaCrosshairs, FaSearch, FaAward, FaCertificate, FaMedal, FaTimes } from "react-icons/fa";
 import { SiGoogle, SiComptia } from "react-icons/si";
 
@@ -75,7 +76,7 @@ export default function AboutSection() {
                   </div>
                   
                   <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-overlay" />
-                  <img src="/images/About-photo.jpg" alt="About photo" className="w-full h-full object-cover filter contrast-125 saturate-50 grayscale-[50%]" />
+                  <Image src="/images/About-photo.jpg" alt="About photo" width={600} height={600} className="w-full h-full object-cover filter contrast-125 saturate-50 grayscale-[50%]" />
                   
                   {/* Glitch scanning line */}
                   <motion.div 

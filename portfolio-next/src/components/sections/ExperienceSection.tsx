@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FaServer, FaUserShield, FaBoxes, FaMicrochip, FaMicroscope } from "react-icons/fa";
 
 const experiences = [
@@ -178,7 +179,7 @@ export default function ExperienceSection() {
                           
                           {/* Company Shield Badge */}
                           <div className="w-16 h-16 shrink-0 bg-white/5 border border-white/10 p-2 rounded-xl flex items-center justify-center transform group-hover:rotate-6 transition-transform">
-                            <img src={exp.img} alt={exp.company} className="w-full h-full object-contain filter grayscale-[30%] contrast-125" />
+                            <Image src={exp.img} alt={exp.company} width={64} height={64} className="w-full h-full object-contain filter grayscale-[30%] contrast-125" />
                           </div>
 
                           <div className="flex-1">

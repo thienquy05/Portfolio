@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FaGraduationCap, FaNetworkWired, FaCheckSquare, FaHdd } from "react-icons/fa";
 
 const inProgressCourses = [
@@ -61,7 +62,7 @@ export default function EducationSection() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-[40px] group-hover:bg-secondary/20 transition-all pointer-events-none" />
               
               <div className="w-24 h-24 bg-white p-3 rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.1)] mb-8 relative z-10 border border-white/20">
-                <img src="/images/edu-logo.png" alt="UT-Logo" className="w-full h-full object-contain filter grayscale-[20%]" />
+                <Image src="/images/edu-logo.png" alt="UT-Logo" width={96} height={96} className="w-full h-full object-contain filter grayscale-[20%]" />
               </div>
               
               <div className="space-y-4 relative z-10">

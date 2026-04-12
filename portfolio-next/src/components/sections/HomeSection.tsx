@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FaShieldAlt, FaRobot, FaNetworkWired, FaFingerprint, FaSearch, FaCubes, FaFolderOpen, FaCrosshairs } from "react-icons/fa";
 import { TbRadar } from "react-icons/tb";
+import Image from "next/image";
 
 export default function HomeSection() {
   return (
@@ -106,7 +107,7 @@ export default function HomeSection() {
                   <div className="w-full h-full overflow-hidden filter grayscale contrast-150 relative">
                     {/* Scanning line for photo */}
                     <div className="absolute top-0 left-0 right-0 h-1 bg-secondary/50 z-20 animate-[scan_2s_ease-in-out_infinite]" />
-                    <img src="/images/Professional.jpg" alt="Profile" className="w-full h-full object-cover mix-blend-luminosity" />
+                    <Image src="/images/Professional.jpg" alt="Profile" width={200} height={200} priority className="w-full h-full object-cover mix-blend-luminosity" />
                   </div>
                   {/* Target corners */}
                   <div className="absolute -top-1 -left-1 w-2 h-2 border-t-2 border-l-2 border-secondary" />
@@ -163,7 +164,7 @@ export default function HomeSection() {
                   <span className="text-[10px] text-white/30 font-mono tracking-widest flex items-center gap-2"><FaFolderOpen className="text-white/20"/> ENCRYPTION: AES-256</span>
                   <span className="text-[10px] text-white/30 font-mono tracking-widest flex items-center gap-2"><FaCrosshairs className="text-white/20"/> LOCATION: UTOLEDO_MAIN</span>
                 </div>
-                <img src="/images/logo-utoledo-horizontal.png" alt="Utoledo Logo" className="h-10 md:h-12 object-contain opacity-60 filter invert sepia" />
+                <Image src="/images/logo-utoledo-horizontal.png" alt="Utoledo Logo" width={180} height={48} priority style={{ width: "auto" }} className="h-10 md:h-12 object-contain opacity-60 filter invert sepia" />
               </div>
             </div>
           </motion.div>

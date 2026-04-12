@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FaGithub, FaServer, FaLink, FaDatabase } from "react-icons/fa";
 
 const projects = [
@@ -122,9 +123,11 @@ export default function ProjectsSection() {
               {/* Image Container */}
               <div className="relative h-48 overflow-hidden bg-black">
                  <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-overlay" />
-                <img 
+                <Image 
                   src={project.img} 
-                  alt={project.title} 
+                  alt={project.title}
+                  fill 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="w-full h-full object-cover filter contrast-125 grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent z-10 opacity-90" />

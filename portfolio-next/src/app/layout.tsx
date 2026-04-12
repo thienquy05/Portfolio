@@ -16,6 +16,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Thien Quy Pham | Portfolio",
   description: "Computer Science Portfolio for Thien Quy Pham",
+  openGraph: {
+    title: "Thien Quy Pham | Portfolio",
+    description: "Computer Science Portfolio for Thien Quy Pham",
+    url: "https://thienquy05.github.io",
+    siteName: "Thien Quy Pham Portfolio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Thien Quy Pham | Portfolio",
+    description: "Computer Science Portfolio for Thien Quy Pham",
+  },
 };
 
 export default function RootLayout({

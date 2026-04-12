@@ -26,8 +26,8 @@ const projects = [
     img: "/images/phishing.png",
     desc: "A web application designed to help people learn about phishing attacks by simulating suspicious links and data collection.",
     tags: ["Python", "React", "TypeScript", "SQL"],
-    link: "https://phish-tracker-demo.netlify.app/",
-    status: "ACTIVE",
+    link: "https://github.com/thienquy05/phishing-awareness-pro",
+    status: "DEPLOYED",
   },
   {
     title: "Snake Game",

@@ -27,6 +27,7 @@ const projects = [
     desc: "A web application designed to help people learn about phishing attacks by simulating suspicious links and data collection.",
     tags: ["Python", "React", "TypeScript", "SQL"],
     link: "https://github.com/thienquy05/phishing-awareness-pro",
+    deployLink: "https://phish-tracker-demo.netlify.app/", 
     status: "DEPLOYED",
   },
   {
@@ -162,18 +163,34 @@ export default function ProjectsSection() {
                     ))}
                   </div>
 
-                  {/* Action Link */}
-                  <motion.a 
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full flex items-center justify-center gap-3 bg-secondary/10 hover:bg-secondary border border-secondary/30 hover:border-secondary text-secondary hover:text-black font-mono font-bold py-3 rounded-lg transition-all text-sm uppercase tracking-widest relative overflow-hidden"
-                  >
-                    <FaGithub className="text-lg relative z-10" /> 
-                    <span className="relative z-10">Access Source Core</span>
-                  </motion.a>
+                  {/* Action Links */}
+                  <div className="flex gap-4 w-full">
+                    <motion.a 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 bg-secondary/10 hover:bg-secondary border border-secondary/30 hover:border-secondary text-secondary hover:text-black font-mono font-bold py-3 rounded-lg transition-all text-xs uppercase tracking-widest relative overflow-hidden"
+                    >
+                      <FaGithub className="text-base relative z-10" /> 
+                      <span className="relative z-10">{project.deployLink ? "Source" : "Access Source Core"}</span>
+                    </motion.a>
+                    
+                    {project.deployLink && (
+                      <motion.a 
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        href={project.deployLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 bg-secondary/10 hover:bg-secondary border border-secondary/30 hover:border-secondary text-secondary hover:text-black font-mono font-bold py-3 rounded-lg transition-all text-xs uppercase tracking-widest relative overflow-hidden"
+                      >
+                        <FaLink className="text-base relative z-10" /> 
+                        <span className="relative z-10">Live App</span>
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>

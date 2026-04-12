@@ -159,12 +159,21 @@ export default function HomeSection() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-5 border-t border-white/10 flex justify-between items-end">
+              <div className="mt-8 pt-5 border-t border-white/10 flex justify-between items-center">
                 <div className="flex flex-col gap-1.5">
                   <span className="text-[10px] text-white/30 font-mono tracking-widest flex items-center gap-2"><FaFolderOpen className="text-white/20"/> ENCRYPTION: AES-256</span>
                   <span className="text-[10px] text-white/30 font-mono tracking-widest flex items-center gap-2"><FaCrosshairs className="text-white/20"/> LOCATION: UTOLEDO_MAIN</span>
                 </div>
-                <Image src="/images/logo-utoledo-horizontal.png" alt="Utoledo Logo" width={180} height={48} priority style={{ width: "auto" }} className="h-10 md:h-12 object-contain opacity-60 filter invert sepia" />
+                <div className="relative w-[85px] h-[22px] md:w-[105px] md:h-[28px]">
+                  <Image 
+                    src="/images/logo-utoledo-horizontal.png" 
+                    alt="Utoledo Logo" 
+                    fill
+                    sizes="(max-width: 768px) 85px, 105px"
+                    priority 
+                    className="opacity-60 filter invert sepia object-contain" 
+                  />
+                </div>
               </div>
             </div>
           </motion.div>

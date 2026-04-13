@@ -135,7 +135,7 @@ export default function ChatWidget() {
                   {[
                     "Tell me about Quy's background", 
                     "What are Quy's core technical skills?", 
-                    "Does Quy require visa sponsorship?"
+                    "Why is Quy interested in Cybersecurity?",
                   ].map((suggestion, i) => (
                     <button
                       key={i}

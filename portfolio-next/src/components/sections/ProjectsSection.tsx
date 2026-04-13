@@ -19,7 +19,7 @@ const projects = [
     desc: "Terminal-based Python vulnerability scanner to identify potential network risks, featuring multithreading & SQLite logging.",
     tags: ["Python", "SQL"],
     link: "https://github.com/thienquy05/vuln-scanner",
-    status: "DEPLOYED",
+    status: "ACTIVED",
   },
   {
     title: "Simulated Phishing",
@@ -27,7 +27,7 @@ const projects = [
     desc: "A web application designed to help people learn about phishing attacks by simulating suspicious links and data collection.",
     tags: ["Python", "React", "TypeScript", "SQL"],
     link: "https://github.com/thienquy05/phishing-awareness-pro",
-    deployLink: "https://phish-tracker-demo.netlify.app/", 
+    deployLink: "https://clicksmart.vercel.app/", 
     status: "DEPLOYED",
   },
   {

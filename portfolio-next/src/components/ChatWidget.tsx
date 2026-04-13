@@ -81,7 +81,7 @@ export default function ChatWidget() {
                 </div>
                 <div>
                   <h4 className="text-sm font-black font-mono text-white tracking-widest uppercase flex items-center gap-2">
-                    X A I B O <span className="text-[10px] text-white/40">v1.0</span>
+                    X A I B O <span className="text-[10px] text-white/40">v2.0</span>
                   </h4>
                   <p className="text-[9px] text-emerald-400 font-mono tracking-widest flex items-center gap-1 mt-0.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse border border-emerald-300"></span> INTERROGATION LINK ACTIVE

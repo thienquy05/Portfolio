@@ -9,27 +9,30 @@ const projects = [
     title: "AI Phishing Detection System",
     img: "/images/AI_Detection.png",
     desc: "An intelligent email security system using frontier AI models in a three-agent architecture to detect phishing emails.",
-    tags: ["AI", "Python", "SQL"],
+    tags: ["AI", "Python", "SQL", "Next.js"],
     link: "https://github.com/Phising-Detection-Team/phishing_detection",
     status: "ACTIVE",
   },
+
+  {
+    title: "Simulated Phishing",
+    img: "/images/phishing.png",
+    desc: "A web application designed to help people learn about phishing attacks by simulating suspicious links and data collection.",
+    tags: ["Python", "Next.js"],
+    link: "https://github.com/thienquy05/phishing-awareness-pro",
+    deployLink: "https://clicksmart.vercel.app/", 
+    status: "DEPLOYED",
+  },
+
   {
     title: "Port Vulnerabilities Scanner",
     img: "/images/port-scanner.png",
     desc: "Terminal-based Python vulnerability scanner to identify potential network risks, featuring multithreading & SQLite logging.",
     tags: ["Python", "SQL"],
     link: "https://github.com/thienquy05/vuln-scanner",
-    status: "ACTIVED",
+    status: "ACTIVE",
   },
-  {
-    title: "Simulated Phishing",
-    img: "/images/phishing.png",
-    desc: "A web application designed to help people learn about phishing attacks by simulating suspicious links and data collection.",
-    tags: ["Python", "React", "TypeScript", "SQL"],
-    link: "https://github.com/thienquy05/phishing-awareness-pro",
-    deployLink: "https://clicksmart.vercel.app/", 
-    status: "DEPLOYED",
-  },
+  
   {
     title: "Snake Game",
     img: "/images/snake_game.png",

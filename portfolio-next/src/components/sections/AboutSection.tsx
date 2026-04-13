@@ -219,10 +219,10 @@ export default function AboutSection() {
                   &gt; <strong className="text-secondary">SYSTEM ANALYSIS:</strong> I am a Computer Science specialist operating at the intersection of <span className="text-white font-bold">Cybersecurity</span> and <span className="text-white font-bold">Artificial Intelligence</span>.
                 </p>
                 <p>
-                  &gt; <strong className="text-secondary">OBJECTIVE:</strong> Understand exploitation vectors to engineer impenetrable defenses. I don't just write code; I track malicious anomalies, analyze system architecture, and train AI models to anticipate future threats.
+                  &gt; <strong className="text-secondary">OBJECTIVE:</strong> Understand exploitation vectors to engineer impenetrable defenses. I track malicious anomalies, analyze system architecture, and work with AI models to anticipate future threats.
                 </p>
                 <p>
-                  &gt; <strong className="text-secondary">CURRENT DIRECTIVE:</strong> Currently hunting for an internship or full-time deployment in Cybersecurity. Willing to trade my best coffee-making algorithm in exchange for the chance to investigate network anomalies and fight threat actors!
+                  &gt; <strong className="text-secondary">CURRENT DIRECTIVE:</strong> Currently seeking a Cybersecurity internship or full-time opportunity. I’m curious about how systems fail and how to defend them whether that’s investigating network anomalies or strengthening security.
                 </p>
               </div>
             </div>

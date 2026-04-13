@@ -39,11 +39,23 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
 
+    // Sanitize client-side messages into the strict schema expected by streamText
+    const coreMessages = messages.map((msg: any) => ({
+      role: msg.role === 'user' ? 'user' : 'assistant',
+      content: typeof msg.content === 'string' 
+        ? msg.content 
+        : (msg.parts ? msg.parts.filter((p: any) => p.type === 'text').map((p: any) => p.text).join('\n') : '')
+    }));
+
     // Get embedding for the latest user message
-    const userMessage = messages[messages.length - 1].content;
+    let userMessageText = coreMessages[coreMessages.length - 1].content;
+    if (!userMessageText || userMessageText.trim() === '') {
+      userMessageText = ' ';
+    }
+    
     const { embedding: queryEmbedding } = await embed({
-      model: google.textEmbeddingModel('text-embedding-004'),
-      value: typeof userMessage === 'string' ? userMessage : JSON.stringify(userMessage),
+      model: google.textEmbeddingModel('gemini-embedding-001'),
+      value: userMessageText,
     });
 
     // Load embeddings from JSON
@@ -74,19 +86,16 @@ export async function POST(req: Request) {
     // No artificial network delay, returning right away (2-3s response)
     // await new Promise((resolve) => setTimeout(resolve, ...));
 
-    // Sanitize client-side messages into the strict schema expected by streamText
-    const coreMessages = messages.map((msg: any) => ({
-      role: msg.role === 'user' ? 'user' : 'assistant',
-      content: typeof msg.content === 'string' 
-        ? msg.content 
-        : (msg.parts ? msg.parts.filter((p: any) => p.type === 'text').map((p: any) => p.text).join('') : '')
-    }));
-
     // Call the model using the AI SDK
     const result = streamText({
       model: google('gemini-2.5-flash-lite'), 
       system: SYSTEM_INSTRUCTIONS + contextText, // combine strictly defined rules with context chunks
       messages: coreMessages,
+      onFinish: (completion) => {
+        console.log("=== TOKEN USAGE REPORT ===");
+        console.log(`Total Tokens: ${completion.usage.totalTokens}`);
+        console.log("==========================");
+      }
     });
 
     return result.toUIMessageStreamResponse();

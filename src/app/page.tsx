@@ -1,11 +1,14 @@
+import dynamic from "next/dynamic";
 import Navigation from "@/components/Navigation";
 import HomeSection from "@/components/sections/HomeSection";
-import AboutSection from "@/components/sections/AboutSection";
-import EducationSection from "@/components/sections/EducationSection";
-import ExperienceSection from "@/components/sections/ExperienceSection";
-import ProjectsSection from "@/components/sections/ProjectsSection";
-import ArchitectureSection from "@/components/sections/ArchitectureSection";
-import ContactSection from "@/components/sections/ContactSection";
+
+// Dynamically import below-the-fold sections to improve initial load time
+const AboutSection = dynamic(() => import("@/components/sections/AboutSection"));
+const ExperienceSection = dynamic(() => import("@/components/sections/ExperienceSection"));
+const ProjectsSection = dynamic(() => import("@/components/sections/ProjectsSection"));
+const EducationSection = dynamic(() => import("@/components/sections/EducationSection"));
+const ArchitectureSection = dynamic(() => import("@/components/sections/ArchitectureSection"));
+const ContactSection = dynamic(() => import("@/components/sections/ContactSection"));
 
 export default function Home() {
   return (

@@ -35,12 +35,30 @@ export default function Navigation() {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
     const sectionIds = ["home", "about", "experience", "projects", "education", "architecture", "contacts"];
+    
+    // Use MutationObserver to watch for dynamic sections being added to the DOM
+    const mutationObserver = new MutationObserver(() => {
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) {
+          // IntersectionObserver automatically ignores duplicates
+          observer.observe(element);
+        }
+      });
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    // Initial check
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
     });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 
   return (

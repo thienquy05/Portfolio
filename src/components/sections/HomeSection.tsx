@@ -16,10 +16,9 @@ export default function HomeSection() {
         <div className="w-[1000px] h-[1000px] border border-secondary/20 rounded-full" />
         <div className="absolute w-[600px] h-[600px] border border-secondary/30 rounded-full" />
         <div className="absolute w-[200px] h-[200px] border border-white/50 rounded-full animate-ping" />
-        <motion.div 
-          animate={{ rotate: 360 }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          className="absolute w-[1000px] h-[1px] bg-gradient-to-r from-transparent via-secondary to-transparent" 
+        <div  
+          style={{ willChange: "transform" }}
+          className="absolute w-[1000px] h-[1px] bg-gradient-to-r from-transparent via-secondary to-transparent animate-[spin_10s_linear_infinite]" 
         />
       </div>
 

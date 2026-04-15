@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaFingerprint, FaBriefcase, FaBook, FaFolderOpen, FaSatelliteDish, FaBars, FaTimes } from "react-icons/fa";
+import { FaFingerprint, FaBriefcase, FaBook, FaFolderOpen, FaSatelliteDish, FaBars, FaTimes, FaCogs } from "react-icons/fa";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +13,7 @@ export default function Navigation() {
     { name: "EXPERIENCE", href: "#experience", icon: FaBriefcase, id: "experience" },
     { name: "PROJECTS", href: "#projects", icon: FaFolderOpen, id: "projects" },
     { name: "EDUCATION", href: "#education", icon: FaBook, id: "education" },
+    { name: "SYSTEM RAG", href: "#architecture", icon: FaCogs, id: "architecture" },
     { name: "CONTACT", href: "#contacts", icon: FaSatelliteDish, id: "contacts" },
   ];
 
@@ -33,7 +34,7 @@ export default function Navigation() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    const sectionIds = ["home", "about", "experience", "projects", "education", "contacts"];
+    const sectionIds = ["home", "about", "experience", "projects", "education", "architecture", "contacts"];
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);

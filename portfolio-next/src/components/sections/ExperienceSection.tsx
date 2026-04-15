@@ -15,9 +15,9 @@ const experiences = [
     bg: "bg-blue-400/10",
     border: "border-blue-400/30",
     details: [
-      "Provide technical support for 250+ classrooms and offices, troubleshooting desktops, printers, mobile devices, network, and peripheral connectivity.",
-      "Manage 1,000+ devices via Active Directory and Intune, triaging security alerts and ensuring policy enforcement.",
-      "Diagnose hardware/software issues and assist with machine imaging, deployment, patching, and system refreshes."
+      "Manage 1,000+ enterprise devices via Active Directory and Microsoft Intune, enforcing strict security policies and triaging threat alerts at scale.",
+      "Orchestrate large-scale machine imaging, automated software deployments, and routine patching to maintain security compliance and optimal performance.",
+      "Provide Tier 2 technical support for 250+ locations while proactively educating users on cybersecurity hygiene to reduce the human attack surface."
     ]
   },
   {
@@ -30,9 +30,9 @@ const experiences = [
     bg: "bg-emerald-400/10",
     border: "border-emerald-400/30",
     details: [
-      "Project: AI in Healthcare - bridging computer science and clinical research.",
-      "Develop an automated analysis pipeline to track and classify zebrafish motor behaviors following controlled pharmacological drug exposure using video-based data.",
-      "Collaborate with the Medical Department to curate and validate datasets and processed model outputs to generate statistical insights on drug toxicity."
+      "Architect an automated video-analysis pipeline using LSTM deep learning and XGBoost to classify motor behaviors for clinical drug toxicity studies.",
+      "Train, evaluate, and optimize machine learning models (XGBoost, SVM, Decision Trees), currently achieving over 80% classification accuracy.",
+      "Manage the end-to-end data lifecycle from labeling to statistical output generation, bridging computer science with medical research."
     ]
   },
   {
@@ -45,9 +45,9 @@ const experiences = [
     bg: "bg-purple-400/10",
     border: "border-purple-400/30",
     details: [
-      "Diagnose and resolve hardware, software, and network connectivity issues for university faculty and students.",
-      "Manage support tickets using UToledo ITHelp, accurately documenting issues and escalating complex incidents.",
-      "Provide timely and professional technical support across broad university networks."
+      "Diagnose and resolve hardware, software, and enterprise network connectivity issues for university faculty and students.",
+      "Triage and manage support tickets using UToledo ITHelp, maintaining precise incident documentation for efficient escalation.",
+      "Deliver timely and professional technical support, minimizing downtime across broad university networks."
     ]
   },
   {
@@ -60,9 +60,9 @@ const experiences = [
     bg: "bg-orange-400/10",
     border: "border-orange-400/30",
     details: [
-      "Effectively manage multiple tasks while staying attentive to customers and adapting to business needs.",
-      "Collaborate with team members while also taking initiative without constant supervision.",
-      "Interpret instructions, reports, and on-screen information, and accurately input data into computer daily."
+      "Operated in a high-traffic environment, managing diverse tasks, data entry, and floor operations simultaneously.",
+      "Demonstrated strong independent initiative and problem-solving skills to adapt to shifting business needs.",
+      "Translated complex technical instructions and product specifications into clear, actionable steps for end-users."
     ]
   },
   {
@@ -75,9 +75,9 @@ const experiences = [
     bg: "bg-emerald-400/10",
     border: "border-emerald-400/30",
     details: [
-      "Delivered hands-on instruction in mathematics and introduced campers to engineering concepts, with a focus on computer science and programming fundamentals.",
-      "Led interactive workshops demonstrating the real-world application of algorithms, logical reasoning, and problem-solving.",
-      "Mentored student projects to foster creativity, collaboration, and curiosity in STEM fields."
+      "Instructed students in computer science fundamentals, teaching algorithms, logical reasoning, and hands-on programming.",
+      "Mentored projects focused on STEM creativity, breaking down abstract technical concepts for non-technical audiences.",
+      "Developed strong presentation and technical communication skills applicable to cybersecurity user education."
     ]
   },
   {
@@ -90,9 +90,9 @@ const experiences = [
     bg: "bg-blue-500/10",
     border: "border-blue-500/30",
     details: [
-      "Served as a brand ambassador by bringing together your passion for people and technology to serve customers.",
-      "Recommended products and solutions that met customers’ needs.",
-      "Applied the appropriate knowledge and expertise through ongoing learning and development."
+      "Bridged customer needs with appropriate technology solutions through active listening and deep product knowledge.",
+      "Maintained continuous learning on new tech hardware and software to provide accurate, informed recommendations.",
+      "Cultivated consultative communication skills to quickly build trust with non-technical stakeholders."
     ]
   }
 ];

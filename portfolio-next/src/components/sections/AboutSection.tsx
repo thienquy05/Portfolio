@@ -216,13 +216,13 @@ export default function AboutSection() {
               
               <div className="text-white/70 leading-relaxed font-mono text-sm sm:text-base space-y-4">
                 <p>
-                  &gt; <strong className="text-secondary">FOCUS:</strong> I am a Computer Science specialist operating at the intersection of <span className="text-white font-bold">Cybersecurity</span> and <span className="text-white font-bold">Artificial Intelligence</span>.
+                  &gt; <strong className="text-secondary">BACKGROUND:</strong> I am a Computer Science student specializing in <span className="text-white font-bold">Cybersecurity</span>, <span className="text-white font-bold">Artificial Intelligence</span>, and IT Administration.
                 </p>
                 <p>
-                  &gt; <strong className="text-secondary">OBJECTIVE:</strong> Understand exploitation vectors to engineer impenetrable defenses. I track malicious anomalies, analyze system architecture, and work with AI models to anticipate future threats.
+                  &gt; <strong className="text-secondary">EXPERTISE:</strong> I build secure systems and leverage AI models for proactive threat detection. My experience ranges from managing enterprise endpoint networks to designing intelligent tools that prevent digital exploits.
                 </p>
                 <p>
-                  &gt; <strong className="text-secondary">GOAL:</strong> Currently seeking a Cybersecurity internship or full-time opportunity. I’m curious about how systems fail and how to defend them whether that’s investigating network anomalies or strengthening security.
+                  &gt; <strong className="text-secondary">OBJECTIVE:</strong> Seeking a Cybersecurity internship or full-time opportunity. I am eager to apply my technical skills to incident response, network defense, and scalable security architecture.
                 </p>
               </div>
             </div>

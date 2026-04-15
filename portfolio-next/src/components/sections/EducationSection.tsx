@@ -44,7 +44,7 @@ export default function EducationSection() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-black text-white tracking-tight text-center"
             >
-              Academic <span className="text-secondary font-serif italic font-light drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Intelligence</span>
+              Higher <span className="text-secondary font-serif italic font-light drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Education</span>
             </motion.h2>
         </div>
 
@@ -67,7 +67,7 @@ export default function EducationSection() {
               
               <div className="space-y-4 relative z-10">
                 <div className="flex items-center gap-2 text-secondary font-mono text-xs uppercase tracking-widest mb-2 border-b border-secondary/50/30 pb-2">
-                  <FaGraduationCap /> Facility Training
+                  <FaGraduationCap /> University
                 </div>
                 <h3 className="text-3xl font-black font-serif italic text-white tracking-tight leading-tight">The University of Toledo</h3>
                 <p className="text-white/60 font-mono text-sm leading-relaxed border-l-2 border-secondary/30/50 pl-3">
@@ -78,9 +78,9 @@ export default function EducationSection() {
                 <div className="mt-8 pt-6 border-t border-secondary/50/50 relative">
                   {/* Stamp */}
                   <div className="absolute right-0 top-0 rotate-12 border-2 border-green-600/60 p-1 pointer-events-none mix-blend-screen opacity-50 mt-4 mr-2">
-                    <span className="text-green-600/60 font-black font-serif uppercase tracking-tighter text-sm">Valid</span>
+                    <span className="text-green-600/60 font-black font-serif uppercase tracking-tighter text-sm">Verified</span>
                   </div>
-                  <p className="text-xs text-white/40 font-mono uppercase mb-2">Metrics Extracted</p>
+                  <p className="text-xs text-white/40 font-mono uppercase mb-2">Academic Standing</p>
                   <div className="flex items-end gap-3 hover:scale-105 transition-transform duration-300">
                     <span className="text-4xl font-black text-secondary leading-none">3.6</span>
                     <span className="text-sm font-mono text-white/60 mb-1 uppercase tracking-widest">Cumulative GPA</span>
@@ -103,7 +103,7 @@ export default function EducationSection() {
               <div className="bg-white/5 border-b border-white/10 px-6 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <FaHdd className="text-white/40" />
-                  <span className="text-white/60 font-mono text-sm uppercase tracking-widest">Knowledge Base Directory</span>
+                  <span className="text-white/60 font-mono text-sm uppercase tracking-widest">Coursework Directory</span>
                 </div>
                 <span className="flex items-center gap-2 text-xs font-mono text-emerald-400">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> SYSTEM NOMINAL
@@ -115,7 +115,7 @@ export default function EducationSection() {
                 {/* Active Synapses */}
                 <div>
                   <h6 className="text-secondary font-mono text-xs uppercase tracking-widest mb-6 flex items-center gap-2 border-l-2 border-secondary pl-3">
-                    Active Subroutines (In Progress)
+                    Current Coursework (In Progress)
                   </h6>
                   <div className="flex flex-col gap-3">
                     {inProgressCourses.map((course, idx) => (
@@ -139,7 +139,7 @@ export default function EducationSection() {
                 {/* Archived Synapses */}
                 <div>
                    <h6 className="text-emerald-400 font-mono text-xs uppercase tracking-widest mb-6 flex items-center gap-2 border-l-2 border-emerald-400 pl-3">
-                    Verified Modules (Completed)
+                    Completed Classes
                   </h6>
                   <div className="flex flex-col gap-2">
                     {completedCourses.map((course, idx) => (

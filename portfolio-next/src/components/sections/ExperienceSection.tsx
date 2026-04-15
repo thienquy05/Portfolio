@@ -122,7 +122,7 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-black text-white tracking-tight uppercase"
             >
-              Mission <span className="text-secondary font-serif italic drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Logs</span>
+              Professional <span className="text-secondary font-serif italic drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Experience</span>
             </motion.h2>
         </div>
 
@@ -165,7 +165,7 @@ export default function ExperienceSection() {
                         {/* Terminal Header */}
                         <div className="absolute top-0 left-0 right-0 bg-black/60 border-b border-secondary/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 overflow-hidden">
                           <span className={`font-mono text-[10px] uppercase tracking-widest text-white/70 flex items-center gap-2 shrink-0`}>
-                            <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" /> CASE_FILE_{idx + 10}
+                            <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" /> RECORD_{idx + 10}
                           </span>
                           <span className={`inline-block px-2 py-0.5 rounded text-[9px] font-mono uppercase tracking-widest bg-secondary/10 text-secondary border border-secondary/50 shadow-[0_0_8px_rgba(255,210,0,0.2)] whitespace-nowrap shrink-0 ml-2`}>
                             {exp.date}
@@ -184,7 +184,7 @@ export default function ExperienceSection() {
 
                           <div className="flex-1">
                             <p className="text-white/40 text-[10px] font-mono uppercase tracking-widest mb-1 border-l border-white/20 pl-2">
-                              STATION: {exp.company}
+                              ORGANIZATION: {exp.company}
                             </p>
                             <h3 className="text-2xl font-bold text-white group-hover:text-secondary transition-colors tracking-tight mb-4 tracking-tighter uppercase">
                               {exp.title}

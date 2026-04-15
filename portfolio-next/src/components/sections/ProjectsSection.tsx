@@ -94,7 +94,7 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-black text-white tracking-tight uppercase relative inline-block"
             >
-              Operation <span className="text-secondary font-serif italic drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Archives</span>
+              Featured <span className="text-secondary font-serif italic drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Projects</span>
               <div className="absolute -top-6 -right-12 rotate-[15deg] border-4 border-secondary/50 p-1 pointer-events-none mix-blend-screen opacity-40">
                 <span className="text-secondary/50 font-black font-serif uppercase tracking-widest text-lg drop-shadow-[0_0_10px_rgba(255,210,0,0.8)]">Restricted</span>
               </div>
@@ -117,7 +117,7 @@ export default function ProjectsSection() {
                   <div className="w-1.5 h-1.5 bg-secondary/50 group-hover:bg-secondary transition-colors" />
                   <div className="w-1.5 h-1.5 bg-yellow-500/50 group-hover:bg-yellow-500 transition-colors" />
                   <div className="w-1.5 h-1.5 bg-green-500/50 group-hover:bg-green-500 transition-colors" />
-                  <span className="text-secondary/50 text-[9px] font-mono ml-2 uppercase tracking-[0.2em]">MISSION_{idx + 1}</span>
+                  <span className="text-secondary/50 text-[9px] font-mono ml-2 uppercase tracking-[0.2em]">PROJECT_{idx + 1}</span>
                 </div>
                 <span className={`text-[9px] font-mono uppercase tracking-[0.2em] px-2 py-0.5 border ${project.status === 'ACTIVE' || project.status === 'DEPLOYED' ? 'border-secondary/30 bg-secondary/10 text-secondary shadow-[0_0_5px_rgba(255,210,0,0.3)]' : 'border-white/10 bg-white/5 text-white/40'}`}>
                   {project.status}
@@ -177,7 +177,7 @@ export default function ProjectsSection() {
                       className="flex-1 flex items-center justify-center gap-2 bg-secondary/10 hover:bg-secondary border border-secondary/30 hover:border-secondary text-secondary hover:text-black font-mono font-bold py-3 rounded-lg transition-all text-xs uppercase tracking-widest relative overflow-hidden"
                     >
                       <FaGithub className="text-base relative z-10" /> 
-                      <span className="relative z-10">{project.deployLink ? "Source" : "Access Source Core"}</span>
+                      <span className="relative z-10">{project.deployLink ? "Source" : "GitHub Repo"}</span>
                     </motion.a>
                     
                     {project.deployLink && (

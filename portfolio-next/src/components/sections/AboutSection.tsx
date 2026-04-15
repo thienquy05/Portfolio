@@ -41,7 +41,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-black text-white tracking-tight uppercase"
             >
-              Investigator <span className="text-secondary font-serif italic font-light drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Dossier</span>
+              Professional <span className="text-secondary font-serif italic font-light drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Profile</span>
             </motion.h2>
         </div>
 
@@ -63,7 +63,7 @@ export default function AboutSection() {
                 <div className="bg-black/50 border-b border-white/5 px-6 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <FaFingerprint className="text-secondary text-xl" />
-                    <span className="text-white/70 font-mono text-sm uppercase tracking-widest">ID-Verification</span>
+                    <span className="text-white/70 font-mono text-sm uppercase tracking-widest">Profile Verification</span>
                   </div>
                   <span className="text-emerald-400 text-xs font-mono bg-emerald-400/10 px-2 py-1 rounded">CLEARANCE: HIGH</span>
                 </div>
@@ -117,7 +117,7 @@ export default function AboutSection() {
                       href="/Resume.pdf"
                       download="ThienQuy_Pham_Resume.pdf"
                       className="flex-none flex items-center justify-center gap-2 bg-black border border-secondary/40 hover:bg-secondary hover:border-secondary hover:text-black text-secondary font-bold py-3 px-5 rounded-sm transition-all shadow-[0_0_10px_rgba(255,210,0,0.1)] hover:shadow-[0_0_20px_rgba(255,210,0,0.4)] group relative overflow-hidden"
-                      title="Extract Dossier File"
+                      title="Download Resume"
                     >
                       <div className="absolute inset-0 bg-secondary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                       <FaDownload className="group-hover:text-black transition-colors relative z-10" />
@@ -144,7 +144,7 @@ export default function AboutSection() {
               <h4 className="text-secondary font-mono text-xs tracking-[0.2em] flex items-center justify-between relative z-10 border-b border-white/10 pb-3">
                 <span className="flex items-center gap-3 font-bold uppercase drop-shadow-[0_0_5px_rgba(255,210,0,0.5)]">
                   <span className="w-1 h-3 bg-secondary"></span>
-                  Tactical Competencies
+                  Core Competencies
                 </span>
                 <span className="flex items-center gap-2 text-[9px] text-white/40 font-mono tracking-widest uppercase">
                   Sys_Online <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping" />
@@ -153,10 +153,10 @@ export default function AboutSection() {
               
               <div className="grid grid-cols-2 gap-4 font-mono z-10 relative">
                 {[
-                  { label: "Clearance Level", value: "IT ADMIN II" },
+                  { label: "Current Role", value: "IT ADMIN II" },
                   { label: "Systems Managed", value: "1,000+ ENDPOINTS" },
-                  { label: "Current Sector", value: "AI CYBER DEFENSE" },
-                  { label: "Core Arsenal", value: "PYTHON / SQL / INTUNE" }
+                  { label: "Focus Area", value: "AI CYBER DEFENSE" },
+                  { label: "Core Stack", value: "PYTHON / SQL / INTUNE" }
                 ].map((stat, idx) => (
                   <div key={idx} className="group/stat relative bg-[#0a0a0a] border border-white/5 p-4 rounded-xl hover:border-secondary/40 hover:bg-[#111] transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,210,0,0.05)] overflow-hidden">
                     {/* Hover accent slide */}
@@ -196,7 +196,7 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right Column: Mission Briefing & Arsenal */}
+          {/* Right Column: Profile Summary & Skills */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -211,18 +211,18 @@ export default function AboutSection() {
               </div>
               
               <h3 className="text-xl font-mono text-white mb-6 flex items-center gap-3 uppercase tracking-widest border-b border-white/10 pb-4">
-                 <span className="w-2 h-2 bg-secondary rounded-full animate-ping" /> Mission Directive
+                 <span className="w-2 h-2 bg-secondary rounded-full animate-ping" /> Overview
               </h3>
               
               <div className="text-white/70 leading-relaxed font-mono text-sm sm:text-base space-y-4">
                 <p>
-                  &gt; <strong className="text-secondary">SYSTEM ANALYSIS:</strong> I am a Computer Science specialist operating at the intersection of <span className="text-white font-bold">Cybersecurity</span> and <span className="text-white font-bold">Artificial Intelligence</span>.
+                  &gt; <strong className="text-secondary">FOCUS:</strong> I am a Computer Science specialist operating at the intersection of <span className="text-white font-bold">Cybersecurity</span> and <span className="text-white font-bold">Artificial Intelligence</span>.
                 </p>
                 <p>
                   &gt; <strong className="text-secondary">OBJECTIVE:</strong> Understand exploitation vectors to engineer impenetrable defenses. I track malicious anomalies, analyze system architecture, and work with AI models to anticipate future threats.
                 </p>
                 <p>
-                  &gt; <strong className="text-secondary">CURRENT DIRECTIVE:</strong> Currently seeking a Cybersecurity internship or full-time opportunity. I’m curious about how systems fail and how to defend them whether that’s investigating network anomalies or strengthening security.
+                  &gt; <strong className="text-secondary">GOAL:</strong> Currently seeking a Cybersecurity internship or full-time opportunity. I’m curious about how systems fail and how to defend them whether that’s investigating network anomalies or strengthening security.
                 </p>
               </div>
             </div>
@@ -271,8 +271,8 @@ export default function AboutSection() {
             {/* Tactical Arsenal Grid */}
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-mono text-white tracking-widest uppercase border-l-2 border-secondary pl-3">Tactical Arsenal</h3>
-                <span className="text-xs text-white/40 font-mono">SELECT NODE FOR DETAILS</span>
+                <h3 className="text-xl font-mono text-white tracking-widest uppercase border-l-2 border-secondary pl-3">Skills & Technologies</h3>
+                <span className="text-xs text-white/40 font-mono">SELECT ICON FOR DETAILS</span>
               </div>
               
               <div className="grid grid-cols-3 gap-3 hidden md:grid">

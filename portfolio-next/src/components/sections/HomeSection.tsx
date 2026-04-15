@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaShieldAlt, FaRobot, FaNetworkWired, FaFingerprint, FaSearch, FaCubes, FaFolderOpen, FaCrosshairs } from "react-icons/fa";
+import { FaShieldAlt, FaRobot, FaNetworkWired, FaFingerprint, FaSearch, FaCubes, FaFolderOpen, FaCrosshairs, FaBriefcase } from "react-icons/fa";
 import { TbRadar } from "react-icons/tb";
 import Image from "next/image";
 
@@ -35,11 +35,11 @@ export default function HomeSection() {
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-sm bg-secondary/10 border border-secondary/30 text-secondary mb-8 shadow-[0_0_20px_rgba(255,210,0,0.15)] relative overflow-hidden">
             <div className="absolute inset-0 bg-secondary/20 translate-x-[-100%] animate-[shimmer_2s_infinite]" />
             <span className="w-2 h-2 rounded-full bg-secondary animate-ping" />
-             <span className="text-xs font-serif font-black tracking-widest uppercase">CLASS-A OPERATIVE LOCATED</span>
+             <span className="text-xs font-serif font-black tracking-widest uppercase">AVAILABLE FOR HIRE</span>
           </div>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6 uppercase">
-            <span className="text-sm font-mono text-secondary tracking-widest block mb-2 opacity-80">// DIRECTIVE_ASSIGNMENT:</span>
+            <span className="text-sm font-mono text-secondary tracking-widest block mb-2 opacity-80">// SPECIALIZATION:</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200 drop-shadow-[0_0_10px_rgba(255,210,0,0.8)]">Cybersecurity</span> Analyst<br/>
             and <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200 drop-shadow-[0_0_10px_rgba(255,210,0,0.8)]">AI</span> Engineer
           </h1>
@@ -50,20 +50,23 @@ export default function HomeSection() {
               <span className="text-secondary/50 font-black font-serif uppercase tracking-widest text-2xl drop-shadow-[0_0_8px_rgba(255,210,0,0.8)]">Classified</span>
             </div>
             <p className="text-white/80">
-              <strong className="text-secondary">&gt; SUBJECT_IDENT:</strong> THIEN QUY PHAM
+              <strong className="text-secondary">&gt; NAME:</strong> THIEN QUY PHAM
             </p>
             <p>
-              <strong className="text-secondary">&gt; MISSION_PARAMETERS:</strong> Computer Science operative specializing in predictive threat engineering, securing digital perimeters, and deploying frontier AI detection models to neutralize exploits before execution.
+              <strong className="text-secondary">&gt; CORE SKILLS:</strong> Cybersecurity, Threat Defense, AI, Python, SQL.
+            </p>
+            <p>
+              <strong className="text-secondary">&gt; LATEST PROJECT:</strong> Sentra — an AI-powered Phishing Detection Platform built to identify and neutralize email threats.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">
             <a href="#projects" className="w-full sm:w-auto text-center px-8 py-4 bg-secondary/10 text-secondary font-mono font-bold rounded-sm border border-secondary hover:bg-secondary hover:text-black transition-all shadow-[0_0_15px_rgba(255,210,0,0.2)] hover:shadow-[0_0_30px_rgba(255,210,0,0.6)] uppercase tracking-widest relative overflow-hidden group">
               <div className="absolute inset-0 bg-secondary/30 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
-              <span className="relative z-10 flex items-center justify-center gap-2"><FaFolderOpen className="mb-0.5" /> Access Case Files</span>
+              <span className="relative z-10 flex items-center justify-center gap-2"><FaFolderOpen className="mb-0.5" /> View Projects</span>
             </a>
-            <a href="#about" className="w-full sm:w-auto text-center px-8 py-4 bg-black border border-white/20 text-white font-mono font-bold rounded-sm hover:bg-white/5 hover:border-secondary/50 transition-all uppercase tracking-widest flex items-center justify-center gap-2">
-              <FaSearch className="text-secondary mb-0.5" /> Decrypt Dossier
+            <a href="#experience" className="w-full sm:w-auto text-center px-8 py-4 bg-black border border-white/20 text-white font-mono font-bold rounded-sm hover:bg-white/5 hover:border-secondary/50 transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+              <FaBriefcase className="text-secondary mb-0.5" /> View Experience
             </a>
           </div>
         </motion.div>
@@ -104,10 +107,10 @@ export default function HomeSection() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 blur-2xl rounded-full" />
                 
                 <div className="w-24 h-24 sm:w-28 sm:h-28 shrink-0 border border-secondary/80 p-1 relative z-10 bg-black/80 shadow-[0_0_15px_rgba(255,210,0,0.3)]">
-                  <div className="w-full h-full overflow-hidden filter grayscale contrast-150 relative">
+                  <div className="w-full h-full overflow-hidden relative">
                     {/* Scanning line for photo */}
                     <div className="absolute top-0 left-0 right-0 h-1 bg-secondary/50 z-20 animate-[scan_2s_ease-in-out_infinite]" />
-                    <Image src="/images/Professional.jpg" alt="Profile" width={200} height={200} priority className="w-full h-full object-cover mix-blend-luminosity" />
+                    <Image src="/images/Professional.jpg" alt="Profile" width={200} height={200} priority className="w-full h-full object-cover" />
                   </div>
                   {/* Target corners */}
                   <div className="absolute -top-1 -left-1 w-2 h-2 border-t-2 border-l-2 border-secondary" />
@@ -117,7 +120,7 @@ export default function HomeSection() {
                 </div>
                 
                 <div className="relative z-10 pt-2">
-                  <p className="text-secondary/80 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.3em] mb-1 border-b border-secondary/30 pb-1">Primary Operative</p>
+                  <p className="text-secondary/80 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.3em] mb-1 border-b border-secondary/30 pb-1">System Profile</p>
                   <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight font-serif mt-2 text-shadow-sm">Thien Quy</h3>
                   <p className="text-secondary font-mono text-[11px] sm:text-xs mt-3 flex items-center gap-2 font-bold tracking-widest">
                     <span className="w-2 h-2 bg-secondary rounded-full animate-ping" />
@@ -131,7 +134,7 @@ export default function HomeSection() {
                 <div>
                   <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase mb-3">
                      <span className="text-white/60 flex items-center gap-2"><FaShieldAlt className="text-secondary text-sm" /> Cybersecurity Analysis</span>
-                    <span className="text-secondary bg-secondary/50/30 px-2 py-0.5 rounded border border-secondary/30/50 shadow-[0_0_10px_rgba(255,210,0,0.2)]">Match [95%]</span>
+                    <span className="text-secondary bg-secondary/50/30 px-2 py-0.5 rounded border border-secondary/30/50 shadow-[0_0_10px_rgba(255,210,0,0.2)]">Level [95%]</span>
                   </div>
                   <div className="w-full h-1.5 sm:h-2 bg-black border border-white/5 overflow-hidden rounded-r-md">
                     <motion.div initial={{ width: 0 }} animate={{ width: "95%" }} transition={{ delay: 1, duration: 1.5 }} className="h-full bg-secondary shadow-[0_0_10px_rgba(255,210,0,1)] relative"><div className="absolute top-0 right-0 w-10 h-full bg-white/40 blur-[2px]" /></motion.div>
@@ -140,8 +143,8 @@ export default function HomeSection() {
 
                 <div>
                   <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase mb-3">
-                     <span className="text-white/60 flex items-center gap-2"><FaSearch className="text-amber-500 text-sm" /> AI Evidence Scanner</span>
-                    <span className="text-amber-400 bg-amber-900/30 px-2 py-0.5 rounded border border-amber-800/50 shadow-[0_0_10px_rgba(245,158,11,0.2)]">Tracing [88%]</span>
+                     <span className="text-white/60 flex items-center gap-2"><FaSearch className="text-amber-500 text-sm" /> AI Threat Detection</span>
+                    <span className="text-amber-400 bg-amber-900/30 px-2 py-0.5 rounded border border-amber-800/50 shadow-[0_0_10px_rgba(245,158,11,0.2)]">Level [88%]</span>
                   </div>
                   <div className="w-full h-1.5 sm:h-2 bg-black border border-white/5 overflow-hidden rounded-r-md">
                     <motion.div initial={{ width: 0 }} animate={{ width: "88%" }} transition={{ delay: 1.2, duration: 1.5 }} className="h-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,1)] relative"><div className="absolute top-0 right-0 w-10 h-full bg-white/40 blur-[2px]" /></motion.div>

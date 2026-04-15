@@ -17,7 +17,7 @@ export default function ChatWidget() {
   const introMessage = {
     id: 'intro',
     role: 'assistant' as const,
-    parts: [{ type: 'text' as const, text: "CLASSIFIED INTERFACE SECURED. I am Xaibo, the system's lead detective node. What intelligence are you attempting to exploit today?" }]
+    parts: [{ type: 'text' as const, text: "CLASSIFIED INTERFACE SECURED. I am Xaibo, the system's lead detective node. What data can I retrieve for you today?" }]
   };
 
   const messages = chatMessages.length > 0 ? chatMessages : [introMessage];
@@ -84,7 +84,7 @@ export default function ChatWidget() {
                     X A I B O <span className="text-[10px] text-white/40">v2.0</span>
                   </h4>
                   <p className="text-[9px] text-emerald-400 font-mono tracking-widest flex items-center gap-1 mt-0.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse border border-emerald-300"></span> INTERROGATION LINK ACTIVE
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse border border-emerald-300"></span> CONNECTION SECURE
                   </p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function ChatWidget() {
                        </div>
                     ) : (
                       <div className="flex flex-col">
-                        <span className="text-[8px] text-white/30 uppercase tracking-widest mb-2 border-b border-white/5 pb-1">&gt; DETECTIVE_XAIBO_RESPONSE</span>
+                        <span className="text-[8px] text-white/30 uppercase tracking-widest mb-2 border-b border-white/5 pb-1">&gt; XAIBO_RESPONSE</span>
                         {msg.parts?.map((part, i) => part.type === 'text' ? <span key={i}>{part.text}</span> : null) || ''}
                       </div>
                     )}
@@ -152,7 +152,7 @@ export default function ChatWidget() {
               {isLoading && (
                 <div className="flex justify-start relative z-10 ml-4">
                   <div className="bg-black/60 text-secondary border border-secondary/20 rounded-r-xl rounded-tl-xl px-4 py-3 text-xs shadow-md flex gap-2 items-center uppercase tracking-widest">
-                    <FaNetworkWired className="animate-spin" /> Fetching intel...
+                    <FaNetworkWired className="animate-spin" /> Fetching data...
                   </div>
                 </div>
               )}
@@ -168,7 +168,7 @@ export default function ChatWidget() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Initiate prompt..."
+                  placeholder="Ask me anything..."
                   disabled={isLoading}
                   className="w-full bg-[#0d0d0d] border border-white/10 text-emerald-400 font-mono text-xs rounded-lg py-3 pl-8 pr-16 focus:outline-none focus:ring-1 focus:ring-secondary/50 focus:border-secondary/50 placeholder-white/20 transition-all uppercase"
                   spellCheck="false"
@@ -178,7 +178,7 @@ export default function ChatWidget() {
                   disabled={!input.trim() || isLoading}
                   className="absolute right-2 text-xs font-black uppercase font-mono px-3 py-1.5 bg-secondary text-black rounded hover:bg-white transition-colors disabled:opacity-30 disabled:hover:bg-secondary cursor-crosshair"
                 >
-                  EXEC
+                  SEND
                 </button>
               </form>
             </div>

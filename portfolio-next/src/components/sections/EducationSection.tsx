@@ -42,9 +42,9 @@ export default function EducationSection() {
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-6xl font-black text-white tracking-tight text-center"
+              className="text-5xl md:text-6xl font-black text-white tracking-tight text-center uppercase"
             >
-              Higher <span className="text-secondary font-serif italic font-light drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Education</span>
+              Academic <span className="text-secondary font-serif italic font-light drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Background</span>
             </motion.h2>
         </div>
 

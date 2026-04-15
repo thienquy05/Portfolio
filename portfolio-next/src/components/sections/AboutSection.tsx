@@ -41,7 +41,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-black text-white tracking-tight uppercase"
             >
-              Professional <span className="text-secondary font-serif italic font-light drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Profile</span>
+              Technical <span className="text-secondary font-serif italic font-light drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Profile</span>
             </motion.h2>
         </div>
 

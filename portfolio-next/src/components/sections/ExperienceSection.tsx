@@ -122,7 +122,7 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-black text-white tracking-tight uppercase"
             >
-              Professional <span className="text-secondary font-serif italic drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Experience</span>
+              RELEVANT <span className="text-secondary font-serif italic drop-shadow-[0_0_15px_rgba(255,210,0,0.5)]">Experience</span>
             </motion.h2>
         </div>
 

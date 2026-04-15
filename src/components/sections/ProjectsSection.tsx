@@ -8,16 +8,16 @@ const projects = [
   {
     title: "AI Phishing Detection System",
     img: "/images/AI_Detection.png",
-    desc: "An intelligent email security system using frontier AI models in a three-agent architecture to detect phishing emails.",
+    desc: "Sentra - an AI-driven phishing detection platform implementing robust input sanitization and inference rate limiting to harden the underlying model against adversarial evasion and prompt injection attacks.",
     tags: ["AI", "Python", "SQL", "Next.js"],
     link: "https://github.com/Phising-Detection-Team/phishing_detection",
-    status: "ACTIVE",
+    status: "ACTIVE"
   },
 
   {
     title: "Simulated Phishing",
     img: "/images/phishing.png",
-    desc: "A web application designed to help people learn about phishing attacks by simulating suspicious links and data collection.",
+    desc: "Clicksmart - a web application designed to help people learn about phishing attacks by simulating suspicious links and data collection.",
     tags: ["Python", "Next.js"],
     link: "https://github.com/thienquy05/phishing-awareness-pro",
     deployLink: "https://clicksmart.vercel.app/", 

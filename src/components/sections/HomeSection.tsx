@@ -165,7 +165,7 @@ export default function HomeSection() {
                     <span className="text-white/60 flex items-center gap-2"><FaNetworkWired className="text-blue-400 text-sm md:text-base" /> Network Defense</span>
                   </div>
                   <div className="flex flex-wrap gap-2.5 sm:gap-3">
-                    {["TCP/IP", "OSI Model", "Threat Triaging", "Port Scanning", "Endpoint Mgmt"].map((skill, i) => (
+                    {["TCP/IP", "OSI Model", "Threat Triaging", "Port Scanning", "Endpoint Management"].map((skill, i) => (
                       <span key={i} className="text-[11px] sm:text-xs font-mono font-medium text-blue-300 bg-blue-500/10 border border-blue-500/30 px-3 py-1.5 rounded-md shadow-[0_0_15px_rgba(59,130,246,0.1)] cursor-default hover:bg-blue-500/20 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] hover:-translate-y-0.5 transition-all">
                         {skill}
                       </span>

@@ -20,7 +20,7 @@ Email: ThienQuy.Pham@rockets.utoledo.edu
 GitHub: thienquy05
 LinkedIn: Thien Quy Pham
 
-## Education & Clearances
+## Education & Certifications
 - B.S. in Computer Science, The University of Toledo (Aug 2023 – Dec 2027) | GPA: 3.61
 - Google Cybersecurity Certificate (Oct 2025)
 - CompTIA A+ (In Progress)

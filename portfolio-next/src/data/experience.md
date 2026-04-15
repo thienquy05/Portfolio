@@ -1,7 +1,7 @@
 ## Professional Experience
 
 ### IT System Administrator — Level II | University of Toledo (Jan 2025 – Present)
-Quy manages 1,000+ enterprise devices across the university's engineering department using **Active Directory** and **Microsoft Intune**, enforcing strict security policies and triaging threat alerts at scale. He provides Tier 2 technical support for 250+ classrooms and offices — covering desktops, printers, mobile devices, enterprise network issues, and peripheral connectivity.
+Quy manages 1,000+ enterprise endpoints across the university's engineering department using **Active Directory** and **Microsoft Intune**, enforcing strict security policies with a 99% successful patch deployment rate. He provides Tier 2 technical support for 250+ classrooms and offices — covering desktops, printers, mobile devices, enterprise network issues, and peripheral connectivity.
 
 Beyond the job description, Quy leads active incident response operations. In one case, the security team flagged a device by asset tag for malware activity. Quy located the machine, identified an unauthorized **HackTool** installed to bypass university policy, immediately isolated the endpoint from the network, verified the environment was clean, performed a full secure disk wipe, reimaged the machine, and restored it to operational status. He prioritizes proactive user education — advising faculty and students on how to avoid exposing organizational data online, effectively reducing the human attack surface before incidents occur.
 

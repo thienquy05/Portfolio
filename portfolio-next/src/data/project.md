@@ -13,5 +13,3 @@ An AI-powered operator that autonomously monitors and surfaces the latest cybers
 ### CyberLab (Planned)
 A self-hosted personal cybersecurity exploration environment for hands-on offensive and defensive security practice, complementing TryHackMe and HackTheBox with a fully controlled lab setup.
 
-### Portfolio Suite
-Python/Pygame Snake game, HTML/JS QR code generator, and C++ Huffman Coding project — demonstrating breadth across languages and paradigms.

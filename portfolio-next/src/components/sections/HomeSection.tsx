@@ -122,9 +122,9 @@ export default function HomeSection() {
                 <div className="relative z-10 pt-2">
                   <p className="text-secondary/80 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.3em] mb-1 border-b border-secondary/30 pb-1">System Profile</p>
                   <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight font-serif mt-2 text-shadow-sm">Thien Quy</h3>
-                  <p className="text-secondary font-mono text-[11px] sm:text-xs mt-3 flex items-center gap-2 font-bold tracking-widest">
-                    <span className="w-2 h-2 bg-secondary rounded-full animate-ping" />
-                    STATUS: SEEKING INTERNSHIP
+                  <p className="text-emerald-400 font-mono text-[11px] sm:text-xs mt-3 flex items-center gap-2 font-bold tracking-widest">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
+                    ACTIVELY SEEKING INTERNSHIPS
                   </p>
                 </div>
               </div>

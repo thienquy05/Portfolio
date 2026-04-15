@@ -32,39 +32,6 @@ const projects = [
     link: "https://github.com/thienquy05/vuln-scanner",
     status: "ACTIVE",
   },
-  
-  {
-    title: "Snake Game",
-    img: "/images/snake_game.png",
-    desc: "A classic Snake game using Python and the Pygame library, implementing real-time movement and collision detection.",
-    tags: ["Python"],
-    link: "https://github.com/thienquy05/Snake_Game_Python/blob/main/snake_game.py",
-    status: "ARCHIVED",
-  },
-  {
-    title: "QR Code Generator",
-    img: "/images/qrwebsite.png",
-    desc: "Basic web app that generates QR codes using a JS library, allowing custom data input and instant creation.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://thienquy05.github.io/QRCodeGenerator/",
-    status: "ARCHIVED",
-  },
-  {
-    title: "Beverages Menu",
-    img: "/images/beverages.png",
-    desc: "Python-based beverage inventory system using OOP and JSON data storage, managing items and consistency via file I/O.",
-    tags: ["Python", "JSON"],
-    link: "https://github.com/thienquy05/BeveragesMenu",
-    status: "ARCHIVED",
-  },
-  {
-    title: "Bank Programming",
-    img: "/images/bank.png",
-    desc: "A banking system that reads/writes account data, processes transactions, calculates interest, and evaluates loan risk.",
-    tags: ["JAVA"],
-    link: "https://github.com/thienquy05/Banks/tree/main/BankProgramming/src",
-    status: "ARCHIVED",
-  },
 ];
 
 export default function ProjectsSection() {

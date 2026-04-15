@@ -12,9 +12,9 @@ export default function Home() {
       <Navigation />
       <HomeSection />
       <AboutSection />
-      <EducationSection />
       <ExperienceSection />
       <ProjectsSection />
+      <EducationSection />
       <ContactSection />
     </main>
   );

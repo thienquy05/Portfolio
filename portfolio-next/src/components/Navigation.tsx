@@ -9,11 +9,11 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
 
   const navLinks = [
-    { name: "IDENT", href: "#about", icon: FaFingerprint, id: "about" },
-    { name: "EVIDENCE", href: "#education", icon: FaBook, id: "education" },
-    { name: "MISSION LOGS", href: "#experience", icon: FaBriefcase, id: "experience" },
-    { name: "ARCHIVES", href: "#projects", icon: FaFolderOpen, id: "projects" },
-    { name: "COMMS", href: "#contacts", icon: FaSatelliteDish, id: "contacts" },
+    { name: "ABOUT", href: "#about", icon: FaFingerprint, id: "about" },
+    { name: "EXPERIENCE", href: "#experience", icon: FaBriefcase, id: "experience" },
+    { name: "PROJECTS", href: "#projects", icon: FaFolderOpen, id: "projects" },
+    { name: "EDUCATION", href: "#education", icon: FaBook, id: "education" },
+    { name: "CONTACT", href: "#contacts", icon: FaSatelliteDish, id: "contacts" },
   ];
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Navigation() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    const sectionIds = ["home", "about", "education", "experience", "projects", "contacts"];
+    const sectionIds = ["home", "about", "experience", "projects", "education", "contacts"];
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);

@@ -131,35 +131,49 @@ export default function HomeSection() {
 
               {/* Engine Status / Skill Matrix */}
               <div className="space-y-6 sm:space-y-8 flex-grow">
+                
+                {/* Cybersecurity */}
                 <div>
-                  <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase mb-3">
-                     <span className="text-white/60 flex items-center gap-2"><FaShieldAlt className="text-secondary text-sm" /> Cybersecurity Analysis</span>
-                    <span className="text-secondary bg-secondary/50/30 px-2 py-0.5 rounded border border-secondary/30/50 shadow-[0_0_10px_rgba(255,210,0,0.2)]">Level [95%]</span>
+                  <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase mb-4">
+                     <span className="text-white/60 flex items-center gap-2"><FaShieldAlt className="text-secondary text-sm md:text-base" /> Cybersecurity</span>
                   </div>
-                  <div className="w-full h-1.5 sm:h-2 bg-black border border-white/5 overflow-hidden rounded-r-md">
-                    <motion.div initial={{ width: 0 }} animate={{ width: "95%" }} transition={{ delay: 1, duration: 1.5 }} className="h-full bg-secondary shadow-[0_0_10px_rgba(255,210,0,1)] relative"><div className="absolute top-0 right-0 w-10 h-full bg-white/40 blur-[2px]" /></motion.div>
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                    {["Prompt Injection", "Rate Limiting", "Authentication", "Active Directory", "Intune"].map((skill, i) => (
+                      <span key={i} className="text-[11px] sm:text-xs font-mono font-medium text-secondary bg-secondary/10 border border-secondary/30 px-3 py-1.5 rounded-md shadow-[0_0_15px_rgba(255,210,0,0.1)] cursor-default hover:bg-secondary/20 hover:shadow-[0_0_20px_rgba(255,210,0,0.25)] hover:-translate-y-0.5 transition-all">
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
+                {/* AI & ML */}
                 <div>
-                  <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase mb-3">
-                     <span className="text-white/60 flex items-center gap-2"><FaSearch className="text-amber-500 text-sm" /> AI Threat Detection</span>
-                    <span className="text-amber-400 bg-amber-900/30 px-2 py-0.5 rounded border border-amber-800/50 shadow-[0_0_10px_rgba(245,158,11,0.2)]">Level [88%]</span>
+                  <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase mb-4">
+                     <span className="text-white/60 flex items-center gap-2"><FaSearch className="text-amber-500 text-sm md:text-base" /> AI & Machine Learning</span>
                   </div>
-                  <div className="w-full h-1.5 sm:h-2 bg-black border border-white/5 overflow-hidden rounded-r-md">
-                    <motion.div initial={{ width: 0 }} animate={{ width: "88%" }} transition={{ delay: 1.2, duration: 1.5 }} className="h-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,1)] relative"><div className="absolute top-0 right-0 w-10 h-full bg-white/40 blur-[2px]" /></motion.div>
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                    {["RAG Architecture", "XGBoost", "LSTM Deep Learning", "LLM APIs", "Pandas"].map((skill, i) => (
+                      <span key={i} className="text-[11px] sm:text-xs font-mono font-medium text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 rounded-md shadow-[0_0_15px_rgba(245,158,11,0.1)] cursor-default hover:bg-amber-500/20 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] hover:-translate-y-0.5 transition-all">
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
+                {/* Network & Infrastructure */}
                 <div>
-                  <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase mb-3">
-                    <span className="text-white/60 flex items-center gap-2"><FaNetworkWired className="text-neutral-400 text-sm" /> Perimeter Tracing</span>
-                    <span className="text-neutral-400 bg-neutral-800/50 px-2 py-0.5 rounded border border-neutral-700/50">Active [92%]</span>
+                  <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase mb-4">
+                    <span className="text-white/60 flex items-center gap-2"><FaNetworkWired className="text-blue-400 text-sm md:text-base" /> Network Defense</span>
                   </div>
-                  <div className="w-full h-1.5 sm:h-2 bg-black border border-white/5 overflow-hidden rounded-r-md">
-                    <motion.div initial={{ width: 0 }} animate={{ width: "92%" }} transition={{ delay: 1.4, duration: 1.5 }} className="h-full bg-neutral-400 shadow-[0_0_10px_rgba(163,163,163,1)] relative"><div className="absolute top-0 right-0 w-10 h-full bg-white/40 blur-[2px]" /></motion.div>
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                    {["TCP/IP", "OSI Model", "Threat Triaging", "Port Scanning", "Endpoint Mgmt"].map((skill, i) => (
+                      <span key={i} className="text-[11px] sm:text-xs font-mono font-medium text-blue-300 bg-blue-500/10 border border-blue-500/30 px-3 py-1.5 rounded-md shadow-[0_0_15px_rgba(59,130,246,0.1)] cursor-default hover:bg-blue-500/20 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] hover:-translate-y-0.5 transition-all">
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
+
               </div>
 
               <div className="mt-8 pt-5 border-t border-white/10 flex justify-between items-center">

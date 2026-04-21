@@ -12,7 +12,7 @@
 :root {
   --background: #0f172a;
   --foreground: #f8fafc;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -45,4 +45,21 @@ body {
 @keyframes slideUp {
   0% { transform: translateY(0); }
   100% { transform: translateY(-100%); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

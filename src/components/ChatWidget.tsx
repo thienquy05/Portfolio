@@ -43,36 +43,18 @@ export default function ChatWidget() {
   }, [messages, isOpen]);
 
   useEffect(() => {
-    let isCancelled = false;
-    let showTimer: ReturnType<typeof setTimeout> | null = null;
-    let hideTimer: ReturnType<typeof setTimeout> | null = null;
-
-    const scheduleTeaser = () => {
-      const delayMs = (20 + Math.floor(Math.random() * 11)) * 1000;
-
-      showTimer = setTimeout(() => {
-        if (isCancelled) return;
-        setShowTeaser(true);
-
-        hideTimer = setTimeout(() => {
-          if (isCancelled) return;
-          setShowTeaser(false);
-          scheduleTeaser();
-        }, 10000);
-      }, delayMs);
-    };
-
-    scheduleTeaser();
+    setShowTeaser(true);
+    const hideTimer = setTimeout(() => {
+      setShowTeaser(false);
+    }, 10000);
 
     return () => {
-      isCancelled = true;
-      if (showTimer) clearTimeout(showTimer);
-      if (hideTimer) clearTimeout(hideTimer);
+      clearTimeout(hideTimer);
     };
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       {/* Floating Action Button */}
       <AnimatePresence>
         {!isOpen && (
@@ -105,7 +87,8 @@ export default function ChatWidget() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(true)}
-              className="w-14 h-14 bg-[#0a0a0a] text-secondary rounded-xl shadow-[0_0_20px_rgba(255,210,0,0.3)] flex items-center justify-center border border-secondary/50 hover:shadow-[0_0_30px_rgba(255,210,0,0.6)] hover:bg-secondary hover:text-black transition-all relative overflow-hidden group"
+              aria-label="Open chat assistant"
+              className="w-14 h-14 bg-[#0a0a0a] text-secondary rounded-xl shadow-[0_0_20px_rgba(255,210,0,0.3)] flex items-center justify-center border border-secondary/50 hover:shadow-[0_0_30px_rgba(255,210,0,0.6)] hover:bg-secondary hover:text-black transition-all relative overflow-hidden group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               {/* Scan animation */}
               <div className="absolute left-0 right-0 h-1 bg-white/30 top-0 translate-y-[-100%] group-hover:translate-y-[14rem] transition-transform duration-1000 ease-in-out blur-[2px]" />
@@ -123,7 +106,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", bounce: 0.3 }}
-            className="absolute bottom-0 right-0 w-[350px] sm:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-[#050505]/95 backdrop-blur-3xl border border-secondary/30 shadow-[0_0_40px_rgba(0,0,0,0.8)] rounded-xl overflow-hidden"
+            className="absolute bottom-0 right-0 w-[min(92vw,400px)] h-[min(78dvh,550px)] min-h-[420px] flex flex-col bg-[#050505]/95 backdrop-blur-3xl border border-secondary/30 shadow-[0_0_40px_rgba(0,0,0,0.8)] rounded-xl overflow-hidden"
           >
             {/* Header */}
             <div className="bg-black border-b border-secondary/30 px-5 py-4 flex justify-between items-center shrink-0 relative overflow-hidden">
@@ -143,7 +126,8 @@ export default function ChatWidget() {
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="text-white/40 hover:text-secondary transition-colors relative z-10 p-2"
+                aria-label="Close chat assistant"
+                className="text-white/40 hover:text-secondary transition-colors relative z-10 p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
                 <FaTimes />
               </button>

@@ -128,7 +128,7 @@ export default function ExperienceSection() {
 
         <div className="relative mt-12">
           {/* Main glowing continuous line */}
-          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-1 md:-ml-[2px] bg-gradient-to-b from-transparent via-white/10 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.15)] z-0" />
+          <div className="hidden md:block absolute left-[28px] md:left-1/2 top-0 bottom-0 w-1 md:-ml-[2px] bg-gradient-to-b from-transparent via-white/10 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.15)] z-0" />
           
           <div className="flex flex-col gap-12 md:gap-0 z-10 relative">
             {experiences.map((exp, idx) => {
@@ -145,7 +145,7 @@ export default function ExperienceSection() {
                 >
                   
                   {/* Timeline Connection Dot (Network Node) */}
-                  <div className={`absolute left-0 md:left-1/2 -ml-3 w-14 h-14 md:w-16 md:h-16 rounded-lg rotate-45 bg-[#0a0a0a] border-2 ${exp.border} z-20 flex items-center justify-center transform transition-transform duration-500 group-hover:scale-125 group-hover:rotate-90 group-hover:bg-white/5 shadow-[0_0_20px_rgba(0,0,0,0.8)] group-hover:shadow-[0_0_30px_var(--secondary)]`}>
+                  <div className={`hidden md:flex absolute left-0 md:left-1/2 -ml-3 w-14 h-14 md:w-16 md:h-16 rounded-lg rotate-45 bg-[#0a0a0a] border-2 ${exp.border} z-20 items-center justify-center transform transition-transform duration-500 group-hover:scale-125 group-hover:rotate-90 group-hover:bg-white/5 shadow-[0_0_20px_rgba(0,0,0,0.8)] group-hover:shadow-[0_0_30px_var(--secondary)]`}>
                     <exp.icon className={`text-xl md:text-2xl ${exp.color} -rotate-45 group-hover:-rotate-90 transition-transform duration-500`} />
                   </div>
 
@@ -153,7 +153,7 @@ export default function ExperienceSection() {
                   <div className={`hidden md:block absolute top-1/2 w-[calc(50%-4rem)] h-px bg-gradient-to-r ${isEven ? 'from-transparent to-secondary/30 left-0' : 'from-secondary/30 to-transparent right-0'} z-0 group-hover:h-[2px] transition-all`} />
 
                   {/* Operational Log Card */}
-                  <div className={`w-[calc(100%-4.5rem)] ml-auto md:w-[calc(50%-4rem)] md:ml-0 md:absolute md:top-1/2 md:-translate-y-1/2 ${isEven ? 'md:left-0 md:pr-8' : 'md:right-0 md:pl-8'} group-hover:z-50 transition-all duration-300`}>
+                  <div className={`w-full ml-0 md:w-[calc(50%-4rem)] md:ml-0 md:absolute md:top-1/2 md:-translate-y-1/2 ${isEven ? 'md:left-0 md:pr-8' : 'md:right-0 md:pl-8'} group-hover:z-50 transition-all duration-300`}>
                     <div className={`relative w-full bg-[#0d0d0d] border border-white/10 p-1 rounded-2xl hover:border-secondary/30 transition-colors shadow-2xl`}>
                       
                       <div className="bg-black/90 rounded-xl p-6 md:p-8 relative overflow-hidden backdrop-blur-xl border-t border-secondary/50/50">
@@ -178,12 +178,12 @@ export default function ExperienceSection() {
                         <div className="flex flex-col md:flex-row gap-6 relative z-10 pt-6">
                           
                           {/* Company Shield Badge */}
-                          <div className="w-16 h-16 shrink-0 bg-white/5 border border-white/10 p-2 rounded-xl flex items-center justify-center transform group-hover:rotate-6 transition-transform">
+                          <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 bg-white/5 border border-white/10 p-2 rounded-xl flex items-center justify-center transform group-hover:rotate-6 transition-transform">
                             <Image src={exp.img} alt={exp.company} width={64} height={64} className="w-full h-full object-contain filter grayscale-[30%] contrast-125" />
                           </div>
 
                           <div className="flex-1">
-                            <p className="text-white/40 text-[10px] font-mono uppercase tracking-widest mb-1 border-l border-white/20 pl-2">
+                            <p className="text-white/60 text-[11px] font-mono uppercase tracking-wider mb-2 border-l border-white/20 pl-2 leading-relaxed">
                               ORGANIZATION: {exp.company}
                             </p>
                             <h3 className="text-2xl font-bold text-white group-hover:text-secondary transition-colors tracking-tight mb-4 tracking-tighter uppercase">

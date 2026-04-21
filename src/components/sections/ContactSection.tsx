@@ -43,7 +43,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-white/50 font-mono text-sm md:text-base text-center mb-20 max-w-2xl mx-auto bg-white/5 p-4 border border-white/10 relative"
+          className="text-white/75 font-mono text-sm md:text-base text-center mb-20 max-w-2xl mx-auto bg-white/5 p-4 border border-white/10 relative"
         >
           {/* Edges marker corner lines */}
           <div className="absolute -top-1 -left-1 w-2 h-2 border-t-2 border-l-2 border-secondary" />
@@ -72,7 +72,7 @@ export default function ContactSection() {
             <div className="absolute top-0 bottom-0 left-[-100%] w-10 bg-white/5 blur-[10px] skew-x-12 group-hover:left-[200%] transition-all duration-700 ease-in-out" />
             
             <div className="flex flex-col gap-1 relative z-10">
-              <span className="font-mono text-xs text-white/40 uppercase tracking-widest">Direct Transmission</span>
+              <span className="font-mono text-xs text-white/60 uppercase tracking-widest">Direct Transmission</span>
               <span className="font-mono font-bold text-white group-hover:text-secondary transition-colors text-sm md:text-base tracking-wide">
                 [SECURE_INTEL]
               </span>
@@ -99,7 +99,7 @@ export default function ContactSection() {
               <div className="absolute top-0 bottom-0 left-[-100%] w-10 bg-white/5 blur-[10px] skew-x-12 group-hover:left-[200%] transition-all duration-700 ease-in-out" />
               
               <div className="flex flex-col gap-1 relative z-10">
-                <span className="font-mono text-xs text-white/40 uppercase tracking-widest">{contact.desc}</span>
+                <span className="font-mono text-xs text-white/60 uppercase tracking-widest">{contact.desc}</span>
                 <span className="font-mono font-bold text-white group-hover:text-secondary transition-colors text-sm md:text-base tracking-wide">
                   {contact.name}
                 </span>

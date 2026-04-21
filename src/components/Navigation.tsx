@@ -65,7 +65,8 @@ export default function Navigation() {
     <>
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-50 p-3 rounded-md bg-black border border-secondary text-secondary md:hidden shadow-[0_0_15px_rgba(255,210,0,0.3)] hover:bg-secondary hover:text-black transition-all"
+        aria-label="Open navigation menu"
+        className={`fixed top-4 left-4 z-50 p-3 rounded-md bg-black border border-secondary text-secondary md:hidden shadow-[0_0_15px_rgba(255,210,0,0.3)] hover:bg-secondary hover:text-black transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-black ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
       >
         <FaBars />
       </button>
@@ -88,7 +89,7 @@ export default function Navigation() {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-        className={`fixed top-0 left-0 h-screen w-20 hover:w-64 bg-black/95 backdrop-blur-2xl border-r-2 border-secondary/20 transition-all duration-300 z-40 flex flex-col items-center py-10 overflow-hidden group shadow-[20px_0_40px_rgba(0,0,0,0.9)] ${isOpen ? 'translate-x-0' : '-translate-x-[150%] md:translate-x-0'}`}
+        className={`fixed top-0 left-0 h-dvh w-20 hover:w-64 bg-black/95 backdrop-blur-2xl border-r-2 border-secondary/20 transition-all duration-300 z-40 flex flex-col items-center py-10 overflow-hidden group shadow-[20px_0_40px_rgba(0,0,0,0.9)] ${isOpen ? 'translate-x-0' : '-translate-x-[150%] md:translate-x-0'}`}
       >
         {/* UNWANTED Dossier Logo */}
         <a 
@@ -175,10 +176,9 @@ export default function Navigation() {
                   </span>
                 </div>
                 
-                <span className={`opacity-0 w-0 group-hover:w-auto group-hover:opacity-100 group-hover:ml-6 whitespace-nowrap transition-all duration-300 font-mono text-xs font-bold tracking-widest uppercase relative z-10 ${isActive ? 'text-secondary drop-shadow-[0_0_8px_rgba(255,210,0,0.8)]' : 'text-white/60 group-hover:text-white'}`}>
+                <span className={`hidden md:inline-block opacity-0 w-0 group-hover:w-auto group-hover:opacity-100 group-hover:ml-6 whitespace-nowrap transition-all duration-300 font-mono text-xs font-bold tracking-widest uppercase relative z-10 ${isActive ? 'text-secondary drop-shadow-[0_0_8px_rgba(255,210,0,0.8)]' : 'text-white/60 group-hover:text-white'}`}>
                   {link.name}
                 </span>
-
                 {isActive && (
                   <motion.div 
                     layoutId="activeIndicator"

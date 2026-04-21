@@ -99,7 +99,7 @@ export default function AboutSection() {
                       <p className="text-secondary font-mono text-sm uppercase tracking-wider">Cybersecurity & AI Engineer</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-white/40 text-xs uppercase">Status</p>
+                      <p className="text-white/60 text-xs uppercase">Status</p>
                       <p className="text-emerald-400 text-sm font-bold animate-pulse">ACTIVE</p>
                     </div>
                   </div>
@@ -146,7 +146,7 @@ export default function AboutSection() {
                   <span className="w-1 h-3 bg-secondary"></span>
                   Core Competencies
                 </span>
-                <span className="flex items-center gap-2 text-[9px] text-white/40 font-mono tracking-widest uppercase">
+                <span className="flex items-center gap-2 text-[10px] text-white/70 font-mono tracking-widest uppercase">
                   Sys_Online <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping" />
                 </span>
               </h4>
@@ -162,7 +162,7 @@ export default function AboutSection() {
                     {/* Hover accent slide */}
                     <div className="absolute left-0 top-0 bottom-0 w-1 bg-secondary scale-y-0 group-hover/stat:scale-y-100 transition-transform origin-bottom duration-300 ease-out shadow-[0_0_10px_rgba(255,210,0,0.5)]" />
                     
-                    <p className="text-white/40 uppercase mb-1 tracking-wider text-[10px] flex items-center gap-2 group-hover/stat:text-white/60 transition-colors">
+                    <p className="text-white/65 uppercase mb-1 tracking-wider text-xs flex items-center gap-2 group-hover/stat:text-white/80 transition-colors">
                        {stat.label}
                     </p>
                     <p className="text-white font-bold text-[13px] tracking-wide group-hover/stat:text-secondary group-hover/stat:drop-shadow-[0_0_5px_rgba(255,210,0,0.5)] transition-all duration-300">
@@ -174,7 +174,7 @@ export default function AboutSection() {
               
               <div className="mt-8 pt-5 border-t border-white/10 relative z-10">
                 <div className="flex justify-between items-end mb-3">
-                  <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest flex items-center gap-2 group-hover:text-white/60 transition-colors">
+                  <span className="text-white/65 font-mono text-[11px] uppercase tracking-widest flex items-center gap-2 group-hover:text-white/80 transition-colors">
                     Incident Resolution & Uptime
                   </span>
                   <span className="text-secondary font-mono font-bold text-sm tracking-wider drop-shadow-[0_0_8px_rgba(255,210,0,0.8)]">99.9%</span>
@@ -259,7 +259,7 @@ export default function AboutSection() {
                       <h4 className="text-lg font-bold text-white/80 uppercase tracking-tight">CompTIA A+</h4>
                       <span className="text-[10px] font-mono text-white/80 bg-blue-500/30 border border-blue-500/50 px-2 py-0.5 rounded font-bold uppercase tracking-widest">Pursuing</span>
                     </div>
-                    <p className="text-white/50 font-mono text-xs mb-2">Targeting: Core Network & Hardware Fundamentals</p>
+                    <p className="text-white/65 font-mono text-xs mb-2">Targeting: Core Network & Hardware Fundamentals</p>
                     <p className="text-white/60 font-mono text-sm leading-relaxed border-l-2 border-blue-500/30 pl-3">
                       Actively deepening knowledge in IT infrastructure, operational procedures, and troubleshooting hardware anomalies.
                     </p>
@@ -272,7 +272,7 @@ export default function AboutSection() {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-mono text-white tracking-widest uppercase border-l-2 border-secondary pl-3">Skills & Technologies</h3>
-                <span className="text-xs text-white/40 font-mono">SELECT ICON FOR DETAILS</span>
+                <span className="text-xs text-white/65 font-mono">SELECT ICON FOR DETAILS</span>
               </div>
               
               <div className="grid grid-cols-3 gap-3 hidden md:grid">
@@ -345,7 +345,7 @@ export default function AboutSection() {
               
               <button 
                 onClick={() => setSelectedSkill(null)}
-                className="absolute top-4 right-4 text-white/40 hover:text-white font-mono text-sm"
+                className="absolute top-4 right-4 text-white/60 hover:text-white font-mono text-sm"
               >
                 [EXIT]
               </button>
@@ -361,7 +361,7 @@ export default function AboutSection() {
               </div>
               
               <div className="mb-6 space-y-2">
-                <div className="flex justify-between text-xs font-mono text-white/50 uppercase">
+                <div className="flex justify-between text-xs font-mono text-white/70 uppercase">
                   <span>Proficiency Level</span>
                   <span>{selectedSkill.level}%</span>
                 </div>
@@ -420,7 +420,7 @@ export default function AboutSection() {
                   </a>
                   <button 
                     onClick={() => setShowResume(false)}
-                    className="text-white/40 hover:text-white transition-colors"
+                    className="text-white/70 hover:text-white transition-colors"
                     aria-label="Close Resume"
                   >
                     <FaTimes className="text-2xl" />

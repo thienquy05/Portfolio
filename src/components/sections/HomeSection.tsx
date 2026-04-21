@@ -43,7 +43,7 @@ export default function HomeSection() {
             and <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200 drop-shadow-[0_0_10px_rgba(255,210,0,0.8)]">AI</span> Engineer
           </h1>
           
-          <div className="font-mono text-sm md:text-base text-white/50 mb-10 max-w-lg leading-relaxed border-l-2 border-secondary/50 pl-4 space-y-3 relative">
+          <div className="font-mono text-sm md:text-base text-white/70 mb-10 max-w-lg leading-relaxed border-l-2 border-secondary/50 pl-4 space-y-3 relative">
             {/* Classified Stamp */}
             <div className="absolute top-0 right-0 md:right-[-50px] rotate-12 border-4 border-secondary/50 p-1 pointer-events-none mix-blend-screen opacity-40">
               <span className="text-secondary/50 font-black font-serif uppercase tracking-widest text-2xl drop-shadow-[0_0_8px_rgba(255,210,0,0.8)]">Classified</span>
@@ -105,7 +105,7 @@ export default function HomeSection() {
               <div className="flex items-start gap-5 mb-10 bg-black/40 p-5 rounded-sm border-l-4 border-l-secondary relative overflow-hidden group shadow-[inset_0_0_20px_rgba(255,210,0,0.05)]">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 blur-2xl rounded-full" />
                 
-                <div className="w-24 h-24 sm:w-28 sm:h-28 shrink-0 border border-secondary/80 p-1 relative z-10 bg-black/80 shadow-[0_0_15px_rgba(255,210,0,0.3)]">
+                <div className="w-20 h-20 sm:w-28 sm:h-28 shrink-0 border border-secondary/80 p-1 relative z-10 bg-black/80 shadow-[0_0_15px_rgba(255,210,0,0.3)]">
                   <div className="w-full h-full overflow-hidden relative">
                     {/* Scanning line for photo */}
                     <div className="absolute top-0 left-0 right-0 h-1 bg-secondary/50 z-20 animate-[scan_2s_ease-in-out_infinite]" />
@@ -121,8 +121,7 @@ export default function HomeSection() {
                 <div className="relative z-10 pt-2">
                   <p className="text-secondary/80 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.3em] mb-1 border-b border-secondary/30 pb-1">System Profile</p>
                   <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight font-serif mt-2 text-shadow-sm">Thien Quy</h3>
-                  <p className="text-emerald-400 font-mono text-[11px] sm:text-xs mt-3 flex items-center gap-2 font-bold tracking-widest">
-                    <span className="w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
+                  <p className="text-emerald-400/90 font-mono text-[11px] sm:text-xs mt-3 font-bold tracking-[0.18em] uppercase leading-relaxed">
                     ACTIVELY SEEKING INTERNSHIPS
                   </p>
                 </div>
@@ -177,8 +176,8 @@ export default function HomeSection() {
 
               <div className="mt-8 pt-5 border-t border-white/10 flex justify-between items-center">
                 <div className="flex flex-col gap-1.5">
-                  <span className="text-[10px] text-white/30 font-mono tracking-widest flex items-center gap-2"><FaFolderOpen className="text-white/20"/> ENCRYPTION: AES-256</span>
-                  <span className="text-[10px] text-white/30 font-mono tracking-widest flex items-center gap-2"><FaCrosshairs className="text-white/20"/> LOCATION: UTOLEDO_MAIN</span>
+                  <span className="text-[11px] text-white/60 font-mono tracking-widest flex items-center gap-2"><FaFolderOpen className="text-white/40"/> ENCRYPTION: AES-256</span>
+                  <span className="text-[11px] text-white/60 font-mono tracking-widest flex items-center gap-2"><FaCrosshairs className="text-white/40"/> LOCATION: UTOLEDO_MAIN</span>
                 </div>
                 <div className="relative w-[85px] h-[22px] md:w-[105px] md:h-[28px]">
                   <Image 
@@ -186,7 +185,6 @@ export default function HomeSection() {
                     alt="Utoledo Logo" 
                     fill
                     sizes="(max-width: 768px) 85px, 105px"
-                    priority 
                     className="opacity-60 filter invert sepia object-contain" 
                   />
                 </div>

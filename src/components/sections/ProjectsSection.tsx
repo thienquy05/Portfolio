@@ -84,9 +84,9 @@ export default function ProjectsSection() {
                   <div className="w-1.5 h-1.5 bg-secondary/50 group-hover:bg-secondary transition-colors" />
                   <div className="w-1.5 h-1.5 bg-yellow-500/50 group-hover:bg-yellow-500 transition-colors" />
                   <div className="w-1.5 h-1.5 bg-green-500/50 group-hover:bg-green-500 transition-colors" />
-                  <span className="text-secondary/50 text-[9px] font-mono ml-2 uppercase tracking-[0.2em]">PROJECT_{idx + 1}</span>
+                  <span className="text-secondary/70 text-[10px] font-mono ml-2 uppercase tracking-[0.2em]">PROJECT_{idx + 1}</span>
                 </div>
-                <span className={`text-[9px] font-mono uppercase tracking-[0.2em] px-2 py-0.5 border ${project.status === 'ACTIVE' || project.status === 'DEPLOYED' ? 'border-secondary/30 bg-secondary/10 text-secondary shadow-[0_0_5px_rgba(255,210,0,0.3)]' : 'border-white/10 bg-white/5 text-white/40'}`}>
+                <span className={`text-[10px] font-mono uppercase tracking-[0.2em] px-2 py-0.5 border ${project.status === 'ACTIVE' || project.status === 'DEPLOYED' ? 'border-secondary/30 bg-secondary/10 text-secondary shadow-[0_0_5px_rgba(255,210,0,0.3)]' : 'border-white/10 bg-white/5 text-white/60'}`}>
                   {project.status}
                 </span>
               </div>
@@ -116,7 +116,7 @@ export default function ProjectsSection() {
                   </h3>
                 </div>
                 
-                <p className="text-white/60 font-mono text-sm leading-relaxed mb-6 flex-grow">
+                <p className="text-white/75 font-mono text-sm leading-relaxed mb-6 flex-grow">
                   &gt; {project.desc}
                 </p>
 
@@ -126,7 +126,7 @@ export default function ProjectsSection() {
                     {project.tags.map((tag) => (
                       <span 
                         key={tag} 
-                        className="px-2 py-1 bg-black border border-white/10 text-white/50 text-[10px] font-mono font-bold uppercase tracking-widest rounded"
+                        className="px-2 py-1 bg-black border border-white/10 text-white/70 text-xs font-mono font-bold uppercase tracking-widest rounded"
                       >
                         {tag}
                       </span>

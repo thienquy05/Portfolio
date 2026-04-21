@@ -8,6 +8,7 @@ import { useChat, UIMessage } from "@ai-sdk/react";
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [showTeaser, setShowTeaser] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const { messages: chatMessages, sendMessage, status } = useChat({
@@ -41,24 +42,76 @@ export default function ChatWidget() {
     if (isOpen) scrollToBottom();
   }, [messages, isOpen]);
 
+  useEffect(() => {
+    let isCancelled = false;
+    let showTimer: ReturnType<typeof setTimeout> | null = null;
+    let hideTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const scheduleTeaser = () => {
+      const delayMs = (20 + Math.floor(Math.random() * 11)) * 1000;
+
+      showTimer = setTimeout(() => {
+        if (isCancelled) return;
+        setShowTeaser(true);
+
+        hideTimer = setTimeout(() => {
+          if (isCancelled) return;
+          setShowTeaser(false);
+          scheduleTeaser();
+        }, 10000);
+      }, delayMs);
+    };
+
+    scheduleTeaser();
+
+    return () => {
+      isCancelled = true;
+      if (showTimer) clearTimeout(showTimer);
+      if (hideTimer) clearTimeout(hideTimer);
+    };
+  }, []);
+
   return (
     <div className="fixed bottom-6 right-6 z-50">
       {/* Floating Action Button */}
       <AnimatePresence>
         {!isOpen && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIsOpen(true)}
-            className="w-14 h-14 bg-[#0a0a0a] text-secondary rounded-xl shadow-[0_0_20px_rgba(255,210,0,0.3)] flex items-center justify-center border border-secondary/50 hover:shadow-[0_0_30px_rgba(255,210,0,0.6)] hover:bg-secondary hover:text-black transition-all relative overflow-hidden group"
-          >
-            {/* Scan animation */}
-            <div className="absolute left-0 right-0 h-1 bg-white/30 top-0 translate-y-[-100%] group-hover:translate-y-[14rem] transition-transform duration-1000 ease-in-out blur-[2px]" />
-            <FaUserSecret className="text-2xl relative z-10" />
-          </motion.button>
+          <div className="flex flex-col items-end gap-2">
+            <AnimatePresence>
+              {showTeaser && (
+                <motion.div
+                  initial={{ y: 8, opacity: 0, scale: 0.98 }}
+                  animate={{ y: 0, opacity: 1, scale: 1 }}
+                  exit={{ y: 6, opacity: 0, scale: 0.985 }}
+                  transition={{ duration: 0.55, ease: "easeOut" }}
+                  className="relative max-w-[240px] bg-black/95 text-secondary border border-secondary/40 rounded-xl px-3 py-2 shadow-[0_0_20px_rgba(255,210,0,0.18)] pointer-events-none"
+                >
+                  <p className="text-[10px] uppercase tracking-widest leading-relaxed">
+                    XAIBO: Want the fastest tour of Quy's best work? Open me.
+                  </p>
+                  <div className="mt-1.5 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary/70 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-pulse [animation-delay:150ms]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary/50 animate-pulse [animation-delay:300ms]" />
+                  </div>
+                  <div className="absolute right-4 -bottom-2 w-3.5 h-3.5 bg-black/95 border-r border-b border-secondary/40 rotate-45" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+            <motion.button
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsOpen(true)}
+              className="w-14 h-14 bg-[#0a0a0a] text-secondary rounded-xl shadow-[0_0_20px_rgba(255,210,0,0.3)] flex items-center justify-center border border-secondary/50 hover:shadow-[0_0_30px_rgba(255,210,0,0.6)] hover:bg-secondary hover:text-black transition-all relative overflow-hidden group"
+            >
+              {/* Scan animation */}
+              <div className="absolute left-0 right-0 h-1 bg-white/30 top-0 translate-y-[-100%] group-hover:translate-y-[14rem] transition-transform duration-1000 ease-in-out blur-[2px]" />
+              <FaUserSecret className="text-2xl relative z-10" />
+            </motion.button>
+          </div>
         )}
       </AnimatePresence>
 

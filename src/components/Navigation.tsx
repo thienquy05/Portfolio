@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaFingerprint, FaBriefcase, FaBook, FaFolderOpen, FaSatelliteDish, FaBars, FaTimes, FaCogs } from "react-icons/fa";
+import { FaFingerprint, FaBriefcase, FaBook, FaFolderOpen, FaSatelliteDish, FaBars, FaCogs } from "react-icons/fa";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,7 +67,7 @@ export default function Navigation() {
         onClick={() => setIsOpen(!isOpen)}
         className="fixed top-4 left-4 z-50 p-3 rounded-md bg-black border border-secondary text-secondary md:hidden shadow-[0_0_15px_rgba(255,210,0,0.3)] hover:bg-secondary hover:text-black transition-all"
       >
-        {isOpen ? <FaTimes /> : <FaBars />}
+        <FaBars />
       </button>
 
       {/* Backdrop for mobile */}

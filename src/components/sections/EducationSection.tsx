@@ -5,15 +5,17 @@ import Image from "next/image";
 import { FaGraduationCap, FaNetworkWired, FaCheckSquare, FaHdd } from "react-icons/fa";
 
 const inProgressCourses = [
-  "Co-Op: AI in Healthcare",
-  "Chinese Culture",
-  "Intro to Psychology"
+  "Computer Hacking and Forensic Analysis",
+  "Computer Security",
+  "Data Communications",
+  "Introduction to Statistics",
 ];
 
 const completedCourses = [
   "Artificial Intelligence",
-  "Operating System and System Programming",
   "Fundamental Cybersecurity",
+  "Co-Op: AI in Healthcare",
+  "Operating System and System Programming",
   "Object Oriented Programming",
   "Digital Logic Design",
   "Data Structures",

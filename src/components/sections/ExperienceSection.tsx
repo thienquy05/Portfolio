@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaServer, FaUserShield, FaBoxes, FaMicrochip, FaMicroscope } from "react-icons/fa";
+import { FaServer, FaUserShield, FaBoxes, FaMicroscope } from "react-icons/fa";
 
 const experiences = [
   {
     title: "IT System Admin II",
-    date: "Jan 2025 - Present",
+    date: "Jan 2026 - Present",
     company: "University of Toledo - Dept. Dean-Engineering",
     img: "/images/engineering-logo.png",
     icon: FaServer,
@@ -15,14 +15,15 @@ const experiences = [
     bg: "bg-blue-400/10",
     border: "border-blue-400/30",
     details: [
-      "Manage 1,000+ enterprise devices via Active Directory and Microsoft Intune, enforcing strict security policies and triaging threat alerts at scale.",
-      "Orchestrate large-scale machine imaging, automated software deployments, and routine patching to maintain security compliance and optimal performance.",
-      "Provide Tier 2 technical support for 250+ locations while proactively educating users on cybersecurity hygiene to reduce the human attack surface."
+      "Manage 1,000+ Windows and macOS endpoints via Active Directory and Microsoft Intune, enforcing device compliance policies and triaging security alerts across the fleet.",
+      "Responded to 15+ security incidents in four months: remediated unpatched Windows 10 endpoints carrying open vulnerabilities and isolated 2 malware-infected devices from the network.",
+      "Own endpoint lifecycle management: imaging, deployment, OS and application patching, and hardware refresh cycles that keep the fleet in compliance.",
+      "Provide Tier 2 support for 250+ classrooms and offices, resolving desktop, network, printer, and peripheral failures and documenting root cause for the Tier 1 queue."
     ]
   },
   {
     title: "Undergrad Research Assistant",
-    date: "Dec 2025 - Present",
+    date: "Dec 2025 - May 2026",
     company: "University of Toledo - Toledo, OH",
     img: "/images/UT-logo-web.jpg",
     icon: FaMicroscope,
@@ -30,14 +31,14 @@ const experiences = [
     bg: "bg-emerald-400/10",
     border: "border-emerald-400/30",
     details: [
-      "Architect an automated video-analysis pipeline using LSTM deep learning and XGBoost to classify motor behaviors for clinical drug toxicity studies.",
-      "Train, evaluate, and optimize machine learning models (XGBoost, SVM, Decision Trees), currently achieving over 80% classification accuracy.",
-      "Manage the end-to-end data lifecycle from labeling to statistical output generation, bridging computer science with medical research."
+      "Built an automated Python video-analysis pipeline to track and classify zebrafish motor behavior following controlled pharmacological drug exposure.",
+      "Partnered with the Medical Department to curate and validate datasets, translating model output into drug toxicity findings.",
+      "Bridged computer science with clinical research, held concurrently with the IT System Admin and Support Technician roles."
     ]
   },
   {
     title: "IT Support Technician",
-    date: "Dec 2025 - Present", 
+    date: "Dec 2025 - May 2026",
     company: "University of Toledo - IT",
     img: "/images/UT-logo-web.jpg",
     icon: FaUserShield,
@@ -45,9 +46,9 @@ const experiences = [
     bg: "bg-purple-400/10",
     border: "border-purple-400/30",
     details: [
-      "Diagnose and resolve hardware, software, and enterprise network connectivity issues for university faculty and students.",
-      "Triage and manage support tickets using UToledo ITHelp, maintaining precise incident documentation for efficient escalation.",
-      "Deliver timely and professional technical support, minimizing downtime across broad university networks."
+      "Triaged 10-15 tickets per week through UToledoHelp, spanning same-day fixes to multi-day network and hardware escalations.",
+      "Escalated each case through a structured process, writing resolution notes clear enough for the next technician to reproduce the fix.",
+      "Held concurrently with the IT System Admin and Research Assistant roles."
     ]
   },
   {
@@ -60,24 +61,10 @@ const experiences = [
     bg: "bg-orange-400/10",
     border: "border-orange-400/30",
     details: [
-      "Operated in a high-traffic environment, managing diverse tasks, data entry, and floor operations simultaneously.",
-      "Demonstrated strong independent initiative and problem-solving skills to adapt to shifting business needs.",
-      "Translated complex technical instructions and product specifications into clear, actionable steps for end-users."
-    ]
-  },
-  {
-    title: "Summer Camp Tutor",
-    date: "Summer 2025",
-    company: "Explorers Academy",
-    img: "/images/explorers-academy.png",
-    icon: FaMicrochip,
-    color: "text-emerald-400",
-    bg: "bg-emerald-400/10",
-    border: "border-emerald-400/30",
-    details: [
-      "Instructed students in computer science fundamentals, teaching algorithms, logical reasoning, and hands-on programming.",
-      "Mentored projects focused on STEM creativity, breaking down abstract technical concepts for non-technical audiences.",
-      "Developed strong presentation and technical communication skills applicable to cybersecurity user education."
+      "Maintained email capture above 80% per transaction and membership sign-ups at 1.5%, meeting store growth goals.",
+      "Kept extended warranty sales above 11.5% and consistently hit 90%+ of daily sales budget.",
+      "Handled data entry and floor work simultaneously in a high-traffic store, adapting quickly to changing needs using judgment and problem-solving.",
+      "Explained technical product details in simple, clear steps customers could easily follow."
     ]
   },
   {

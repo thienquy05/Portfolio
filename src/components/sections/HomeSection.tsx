@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function HomeSection() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#050505] py-24 lg:py-0">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#050505] py-24 lg:py-16">
       {/* Target Crosshair Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_80%,transparent_100%)] opacity-20 pointer-events-none" />
       
@@ -75,7 +75,7 @@ export default function HomeSection() {
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="relative lg:h-[550px] w-full flex items-center justify-center perspective-1000"
+          className="relative lg:min-h-[550px] w-full flex items-center justify-center perspective-1000 py-8 lg:py-0"
         >
           <motion.div 
             animate={{ y: [0, -10, 0] }}

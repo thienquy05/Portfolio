@@ -55,7 +55,7 @@ export default function HomeSection() {
               <strong className="text-secondary">&gt; CORE SKILLS:</strong> Cybersecurity, Threat Defense, AI, Python, SQL.
             </p>
             <p>
-              <strong className="text-secondary">&gt; LATEST PROJECT:</strong> Fraudify — a team-built AI phishing detection platform that blocks prompt-injection attacks before they reach the LLM.
+              <strong className="text-secondary">&gt; LATEST PROJECT:</strong> Sentra — a team-built AI phishing detection platform that blocks prompt-injection attacks before they reach the LLM.
             </p>
           </div>
 

@@ -8,7 +8,7 @@ const projects = [
   {
     title: "AI Phishing Detection Platform",
     img: "/images/AI_Detection.png",
-    desc: "Fraudify - a team-built AI phishing detection platform for Gmail/Outlook. Engineered a regex pre-flight filter that blocks jailbreak and prompt-injection attempts before they reach the LLM, cutting blocked-request response time from 15-20s to under 5ms.",
+    desc: "Sentra - a team-built AI phishing detection platform for Gmail/Outlook. Engineered a regex pre-flight filter that blocks jailbreak and prompt-injection attempts before they reach the LLM, cutting blocked-request response time from 15-20s to under 5ms.",
     tags: ["AI", "Python", "Flask", "PostgreSQL"],
     link: "https://github.com/Phishing-Detection-Team/fraudify",
     status: "ACTIVE"

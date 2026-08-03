@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaServer, FaUserShield, FaBoxes, FaMicroscope } from "react-icons/fa";
+import { FaServer, FaUserShield, FaBoxes, FaMicrochip, FaMicroscope } from "react-icons/fa";
 
 const experiences = [
   {
@@ -65,6 +65,21 @@ const experiences = [
       "Kept extended warranty sales above 11.5% and consistently hit 90%+ of daily sales budget.",
       "Handled data entry and floor work simultaneously in a high-traffic store, adapting quickly to changing needs using judgment and problem-solving.",
       "Explained technical product details in simple, clear steps customers could easily follow."
+    ]
+  },
+  {
+    title: "Summer Camp Tutor",
+    date: "Summer 2025",
+    company: "Explorers Academy",
+    img: "/images/explorers-academy.png",
+    icon: FaMicrochip,
+    color: "text-emerald-400",
+    bg: "bg-emerald-400/10",
+    border: "border-emerald-400/30",
+    details: [
+      "Instructed students in computer science fundamentals, teaching algorithms, logical reasoning, and hands-on programming.",
+      "Mentored projects focused on STEM creativity, breaking down abstract technical concepts for non-technical audiences.",
+      "Developed strong presentation and technical communication skills applicable to cybersecurity user education."
     ]
   },
   {

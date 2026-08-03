@@ -135,15 +135,16 @@ export default function ExperienceSection() {
           <div className="flex flex-col gap-12 md:gap-0 z-10 relative">
             {experiences.map((exp, idx) => {
               const isEven = idx % 2 === 0;
+              const rowHeight = exp.details.length >= 4 ? "md:h-[46rem]" : "md:h-[28rem]";
 
               return (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.7, ease: "easeOut", delay: idx * 0.1 }}
-                  className={`flex flex-col md:flex-row w-full items-center relative group md:h-[28rem]`}
+                  className={`flex flex-col md:flex-row w-full items-center relative group ${rowHeight}`}
                 >
                   
                   {/* Timeline Connection Dot (Network Node) */}

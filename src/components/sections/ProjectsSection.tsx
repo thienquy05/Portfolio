@@ -6,11 +6,11 @@ import { FaGithub, FaServer, FaLink, FaDatabase } from "react-icons/fa";
 
 const projects = [
   {
-    title: "AI Phishing Detection System",
+    title: "AI Phishing Detection Platform",
     img: "/images/AI_Detection.png",
-    desc: "Sentra - an AI-driven phishing detection platform implementing robust input sanitization and inference rate limiting to harden the underlying model against adversarial evasion and prompt injection attacks.",
-    tags: ["AI", "Python", "SQL", "Next.js"],
-    link: "https://github.com/Phising-Detection-Team/phishing_detection",
+    desc: "Sentra - a team-built AI phishing detection platform for Gmail/Outlook. Engineered a regex pre-flight filter that blocks jailbreak and prompt-injection attempts before they reach the LLM, cutting blocked-request response time from 15-20s to under 5ms.",
+    tags: ["AI", "Python", "Flask", "PostgreSQL"],
+    link: "https://github.com/Phishing-Detection-Team/fraudify",
     status: "ACTIVE"
   },
 

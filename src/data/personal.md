@@ -25,7 +25,7 @@ Quy has traveled across Southeast Asia — Singapore, Thailand, and Malaysia —
 **Location:** Open to remote, hybrid, or on-site — no preference, fully flexible.
 **Availability:**
 - Part-time roles: Available now
-- Summer internship: Available now
+- Summer internship: Seeking a Summer 2027 cybersecurity internship
 - Full-time: Available from December 2027 (graduation)
 - No visa sponsorship needed — Permanent Resident
 

@@ -23,7 +23,7 @@ const experiences = [
   },
   {
     title: "Undergrad Research Assistant",
-    date: "Dec 2025 - May 2026",
+    date: "Dec 2025 - Present",
     company: "University of Toledo - Toledo, OH",
     img: "/images/UT-logo-web.jpg",
     icon: FaMicroscope,
@@ -31,9 +31,9 @@ const experiences = [
     bg: "bg-emerald-400/10",
     border: "border-emerald-400/30",
     details: [
-      "Built an automated Python video-analysis pipeline to track and classify zebrafish motor behavior following controlled pharmacological drug exposure.",
-      "Partnered with the Medical Department to curate and validate datasets, translating model output into drug toxicity findings.",
-      "Bridged computer science with clinical research, held concurrently with the IT System Admin and Support Technician roles."
+      "Develop Python/OpenCV video tracking and behavior-state analysis to extract zebrafish motion features from Novel Tank Test footage.",
+      "Prepare labeled trial data and training workflows that estimate compound-family probabilities, evaluate models, and flag novel responses.",
+      "Bridges computer science with clinical research, held concurrently with the IT System Admin role."
     ]
   },
   {

@@ -150,7 +150,7 @@ export default function HomeSection() {
                      <span className="text-white/60 flex items-center gap-2"><FaSearch className="text-amber-500 text-sm md:text-base" /> AI & Machine Learning</span>
                   </div>
                   <div className="flex flex-wrap gap-2.5 sm:gap-3">
-                    {["LLM APIs", "Prompt Injection Defense", "Data Pipelines", "Model Integration", "Python Automation"].map((skill, i) => (
+                    {["Prompt Injection Defense", "Jailbreak Red-Teaming", "Model Evaluation", "OpenCV", "Python Automation"].map((skill, i) => (
                       <span key={i} className="text-[11px] sm:text-xs font-mono font-medium text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 rounded-md shadow-[0_0_15px_rgba(245,158,11,0.1)] cursor-default hover:bg-amber-500/20 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] hover:-translate-y-0.5 transition-all">
                         {skill}
                       </span>

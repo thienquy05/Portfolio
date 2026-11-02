@@ -222,7 +222,7 @@ export default function AboutSection() {
                   &gt; <strong className="text-secondary">EXPERTISE:</strong> I build secure systems and leverage AI models for proactive threat detection. My experience ranges from managing enterprise endpoint networks to designing intelligent tools that prevent digital exploits.
                 </p>
                 <p>
-                  &gt; <strong className="text-secondary">OBJECTIVE:</strong> Seeking a Cybersecurity internship or full-time opportunity. I am eager to apply my technical skills to incident response, network defense, and scalable security architecture.
+                  &gt; <strong className="text-secondary">OBJECTIVE:</strong> Seeking a Summer 2027 Cybersecurity internship. I am eager to apply my technical skills to incident response, network defense, and scalable security architecture.
                 </p>
               </div>
             </div>
@@ -256,12 +256,12 @@ export default function AboutSection() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <h4 className="text-lg font-bold text-white/80 uppercase tracking-tight">CompTIA A+</h4>
+                      <h4 className="text-lg font-bold text-white/80 uppercase tracking-tight">CompTIA Security+</h4>
                       <span className="text-[10px] font-mono text-white/80 bg-blue-500/30 border border-blue-500/50 px-2 py-0.5 rounded font-bold uppercase tracking-widest">Pursuing</span>
                     </div>
-                    <p className="text-white/65 font-mono text-xs mb-2">Targeting: Core Network & Hardware Fundamentals</p>
+                    <p className="text-white/65 font-mono text-xs mb-2">Targeting: Threats, Security Architecture & Operations</p>
                     <p className="text-white/60 font-mono text-sm leading-relaxed border-l-2 border-blue-500/30 pl-3">
-                      Actively deepening knowledge in IT infrastructure, operational procedures, and troubleshooting hardware anomalies.
+                      Actively deepening knowledge in threat detection, incident response, and securing enterprise infrastructure.
                     </p>
                   </div>
                 </div>

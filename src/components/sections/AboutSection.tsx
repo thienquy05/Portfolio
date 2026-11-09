@@ -5,6 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaPython, FaCode, FaJava, FaHtml5, FaJsSquare, FaDatabase, FaGitAlt, FaGithub, FaFile, FaDownload, FaShieldAlt, FaRobot, FaNetworkWired, FaFingerprint, FaCrosshairs, FaSearch, FaAward, FaCertificate, FaMedal, FaTimes } from "react-icons/fa";
 import { SiGoogle, SiComptia } from "react-icons/si";
+import { useDialog } from "@/lib/use-dialog";
 
 const skills = [
   { id: "cyber", icon: FaShieldAlt, name: "Cybersecurity", color: "text-emerald-500", level: 90 },
@@ -21,6 +22,8 @@ const skills = [
 export default function AboutSection() {
   const [selectedSkill, setSelectedSkill] = useState<{ id: string, name: string, color: string, level: number } | null>(null);
   const [showResume, setShowResume] = useState(false);
+  const skillDialogRef = useDialog<HTMLDivElement>(selectedSkill !== null, () => setSelectedSkill(null));
+  const resumeDialogRef = useDialog<HTMLDivElement>(showResume, () => setShowResume(false));
 
   return (
     <section id="about" className="py-24 px-6 md:px-12 flex justify-center items-center bg-[#0a0a0a] relative z-10 overflow-hidden">
@@ -79,11 +82,14 @@ export default function AboutSection() {
                   <Image src="/images/About-photo.jpg" alt="About photo" width={600} height={600} className="w-full h-full object-cover filter contrast-125 saturate-50 grayscale-[50%]" />
                   
                   {/* Glitch scanning line */}
-                  <motion.div 
-                    animate={{ top: ["0%", "100%", "0%"] }}
+                  {/* Full-height wrapper moves via transform (no layout work); the line sits at its top edge */}
+                  <motion.div
+                    animate={{ y: ["0%", "100%", "0%"] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                    className="absolute left-0 right-0 h-1 bg-secondary/50 shadow-[0_0_20px_rgba(var(--secondary),0.8)] z-30" 
-                  />
+                    className="absolute inset-0 pointer-events-none z-30"
+                  >
+                    <div className="h-1 bg-secondary/50 shadow-[0_0_20px_rgba(var(--secondary),0.8)]" />
+                  </motion.div>
                 </div>
 
                 {/* Identity Details */}
@@ -118,6 +124,7 @@ export default function AboutSection() {
                       download="ThienQuy_Pham_Resume.pdf"
                       className="flex-none flex items-center justify-center gap-2 bg-black border border-secondary/40 hover:bg-secondary hover:border-secondary hover:text-black text-secondary font-bold py-3 px-5 rounded-sm transition-all shadow-[0_0_10px_rgba(255,210,0,0.1)] hover:shadow-[0_0_20px_rgba(255,210,0,0.4)] group relative overflow-hidden"
                       title="Download Resume"
+                      aria-label="Download resume (PDF)"
                     >
                       <div className="absolute inset-0 bg-secondary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                       <FaDownload className="group-hover:text-black transition-colors relative z-10" />
@@ -277,40 +284,44 @@ export default function AboutSection() {
               
               <div className="grid grid-cols-3 gap-3 hidden md:grid">
                 {skills.map((skill, index) => (
-                  <motion.div
+                  <motion.button
+                    type="button"
                     key={skill.id}
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                     onClick={() => setSelectedSkill(skill)}
-                    className="bg-black/30 border border-white/5 hover:border-secondary/50 rounded-xl p-4 flex flex-col items-center gap-3 cursor-pointer group relative overflow-hidden"
+                    aria-label={`${skill.name} details, proficiency ${skill.level}%`}
+                    className="bg-black/30 border border-white/5 hover:border-secondary/50 focus-visible:border-secondary focus-visible:outline-none rounded-xl p-4 flex flex-col items-center gap-3 cursor-pointer group relative overflow-hidden"
                   >
                     {/* Hover scan effect */}
-                    <div className="absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:left-[200%] transition-all duration-700 ease-in-out skew-x-12" />
-                    
-                    <skill.icon className={`text-3xl ${skill.color} group-hover:scale-110 transition-transform`} />
+                    <span aria-hidden="true" className="absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:left-[200%] transition-all duration-700 ease-in-out skew-x-12" />
+
+                    <skill.icon aria-hidden="true" className={`text-3xl ${skill.color} group-hover:scale-110 transition-transform`} />
                     <span className="text-xs font-mono text-white/80 uppercase">{skill.name}</span>
-                    
+
                     {/* Tiny stats bar */}
-                    <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden mt-1 opacity-50 group-hover:opacity-100 transition-opacity">
-                      <div className={`h-full bg-current ${skill.color}`} style={{ width: `${skill.level}%` }} />
-                    </div>
-                  </motion.div>
+                    <span aria-hidden="true" className="block w-full h-1 bg-white/10 rounded-full overflow-hidden mt-1 opacity-50 group-hover:opacity-100 transition-opacity">
+                      <span className={`block h-full bg-current ${skill.color}`} style={{ width: `${skill.level}%` }} />
+                    </span>
+                  </motion.button>
                 ))}
               </div>
               
               {/* Mobile optimized grid */}
               <div className="grid grid-cols-2 gap-3 md:hidden">
                 {skills.slice(0, 8).map((skill, index) => (
-                  <motion.div
+                  <button
+                    type="button"
                     key={skill.id}
                     onClick={() => setSelectedSkill(skill)}
-                    className="bg-black/30 border border-white/5 rounded-xl p-4 flex flex-col items-center gap-2 cursor-pointer"
+                    aria-label={`${skill.name} details, proficiency ${skill.level}%`}
+                    className="bg-black/30 border border-white/5 focus-visible:border-secondary focus-visible:outline-none rounded-xl p-4 flex flex-col items-center gap-2 cursor-pointer"
                   >
-                    <skill.icon className={`text-2xl ${skill.color}`} />
+                    <skill.icon aria-hidden="true" className={`text-2xl ${skill.color}`} />
                     <span className="text-[10px] font-mono text-white/80 uppercase tracking-tighter text-center">{skill.name}</span>
-                  </motion.div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -335,7 +346,12 @@ export default function AboutSection() {
               exit={{ scale: 0.9, opacity: 0, rotateY: -90 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-black border border-secondary/30 p-8 rounded-2xl shadow-[0_0_50px_rgba(var(--secondary),0.1)] max-w-md w-full relative overflow-hidden"
+              ref={skillDialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="skill-dialog-title"
+              tabIndex={-1}
+              className="bg-black border border-secondary/30 p-8 rounded-2xl shadow-[0_0_50px_rgba(var(--secondary),0.1)] max-w-md w-full relative overflow-hidden outline-none"
             >
               {/* Decorative corners */}
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-secondary/50" />
@@ -344,7 +360,9 @@ export default function AboutSection() {
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-secondary/50" />
               
               <button 
+                type="button"
                 onClick={() => setSelectedSkill(null)}
+                aria-label="Close skill details"
                 className="absolute top-4 right-4 text-white/60 hover:text-white font-mono text-sm"
               >
                 [EXIT]
@@ -356,7 +374,7 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <p className="text-secondary text-xs font-mono uppercase">Node Analysis</p>
-                  <h3 className="text-2xl font-bold text-white tracking-widest uppercase">{selectedSkill.name}</h3>
+                  <h3 id="skill-dialog-title" className="text-2xl font-bold text-white tracking-widest uppercase">{selectedSkill.name}</h3>
                 </div>
               </div>
               
@@ -402,13 +420,18 @@ export default function AboutSection() {
               exit={{ scale: 0.9, opacity: 0, y: 50 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#050505] border-2 border-secondary/50 rounded-2xl shadow-[0_0_50px_rgba(255,210,0,0.2)] w-full max-w-5xl h-[85vh] relative flex flex-col overflow-hidden"
+              ref={resumeDialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="resume-dialog-title"
+              tabIndex={-1}
+              className="bg-[#050505] border-2 border-secondary/50 rounded-2xl shadow-[0_0_50px_rgba(255,210,0,0.2)] w-full max-w-5xl h-[85vh] relative flex flex-col overflow-hidden outline-none"
             >
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b-2 border-secondary/30 bg-black/60">
                 <div className="flex items-center gap-3">
                   <FaFile className="text-secondary text-xl" />
-                  <h3 className="text-white font-mono uppercase tracking-widest font-bold">ThienQuy_Pham_Resume.pdf</h3>
+                  <h3 id="resume-dialog-title" className="text-white font-mono uppercase tracking-widest font-bold">ThienQuy_Pham_Resume.pdf</h3>
                 </div>
                 <div className="flex items-center gap-4">
                   <a 

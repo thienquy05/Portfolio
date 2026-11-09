@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaDatabase, FaBrain, FaServer, FaCogs, FaNetworkWired, FaCode } from "react-icons/fa";
+import { useDialog } from "@/lib/use-dialog";
 
 const pipelineSteps = [
   {
@@ -101,6 +102,7 @@ const pipelineSteps = [
 
 export default function ArchitectureSection() {
   const [selectedStep, setSelectedStep] = useState<number | null>(null);
+  const stepDialogRef = useDialog<HTMLDivElement>(selectedStep !== null, () => setSelectedStep(null));
 
   // Helper to render the specific visualization graphic based on the active index
   const renderVisualization = (index: number | null) => {
@@ -295,8 +297,10 @@ export default function ArchitectureSection() {
                 transition={{ delay: idx * 0.15, duration: 0.5 }}
                 className="flex flex-col relative z-10"
               >
-                <div 
+                {/* Icon tile is a mouse shortcut; the card below is the keyboard target */}
+                <div
                   onClick={() => setSelectedStep(idx)}
+                  aria-hidden="true"
                   className={`w-24 h-24 rounded-2xl bg-[#0d0d0d] border border-white/10 hover:border-secondary hover:shadow-[0_0_20px_rgba(255,210,0,0.3)] hover:scale-105 flex items-center justify-center mb-6 mx-auto cursor-pointer transition-all duration-300 relative group`}
                 >
                   {/* Redesigned Pipeline Number Badge */}
@@ -308,9 +312,18 @@ export default function ArchitectureSection() {
                   <step.icon className={`text-4xl ${step.color} transform group-hover:scale-110 transition-transform duration-300`} />
                 </div>
                 
-                <div 
+                <div
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Inspect step ${idx + 1}: ${step.title}`}
                   onClick={() => setSelectedStep(idx)}
-                  className={`bg-[#050505] border border-white/10 hover:border-secondary/50 p-6 rounded-xl flex-1 cursor-pointer transition-colors shadow-lg relative overflow-hidden group`}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setSelectedStep(idx);
+                    }
+                  }}
+                  className={`bg-[#050505] border border-white/10 hover:border-secondary/50 focus-visible:border-secondary focus-visible:outline-none p-6 rounded-xl flex-1 cursor-pointer transition-colors shadow-lg relative overflow-hidden group`}
                 >
                    <div className={`absolute top-0 left-0 w-full h-1 ${step.bg}`} />
                    <h3 className="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-secondary transition-colors">{step.title}</h3>
@@ -337,7 +350,12 @@ export default function ArchitectureSection() {
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.95, opacity: 0, y: 20 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                className="relative w-full max-w-4xl bg-[#0a0a0a] border border-white/20 rounded-2xl shadow-[0_0_40px_rgba(0,0,0,1)] overflow-hidden z-[101]"
+                ref={stepDialogRef}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="step-dialog-title"
+                tabIndex={-1}
+                className="relative w-full max-w-4xl bg-[#0a0a0a] border border-white/20 rounded-2xl shadow-[0_0_40px_rgba(0,0,0,1)] overflow-hidden z-[101] outline-none"
               >
                 {/* Modal Header */}
                 <div className={`p-6 border-b border-white/10 flex justify-between items-center bg-gradient-to-r from-black to-[#0d0d0d] relative overflow-hidden`}>
@@ -351,12 +369,14 @@ export default function ArchitectureSection() {
                       })()}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white tracking-tight">{pipelineSteps[selectedStep].title}</h3>
+                      <h3 id="step-dialog-title" className="text-2xl font-bold text-white tracking-tight">{pipelineSteps[selectedStep].title}</h3>
                       <div className="text-xs font-mono text-secondary uppercase tracking-widest mt-1">NODE // 0{selectedStep + 1}</div>
                     </div>
                   </div>
                   
-                  <button 
+                  <button
+                    type="button"
+                    aria-label="Close step details"
                     onClick={() => setSelectedStep(null)}
                     className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white/50 hover:text-white transition-all shadow-lg text-xl"
                   >

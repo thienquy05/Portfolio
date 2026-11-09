@@ -15,6 +15,16 @@ const projects = [
   },
 
   {
+    title: "AEGIS",
+    img: "/images/aegis.png",
+    desc: "Autonomous Agent Security Guard & Prompt Injection Firewall (MakeUC 2026). I designed the firewall workflow, built the admin and intelligence workers that process firewall events and draft new rule candidates, and redesigned the admin and classroom consoles. In end-to-end testing, an approved AI-drafted rule blocked the same attack in a new session.",
+    tags: ["AI Security", "Python", "FastAPI", "Next.js"],
+    link: "https://github.com/MakeUC2026/AEGIS",
+    status: "HACKATHON",
+    imgFit: "object-contain", // banner art has text at the edges; don't crop it
+  },
+
+  {
     title: "Simulated Phishing",
     img: "/images/phishing.png",
     desc: "Clicksmart - a web application designed to help people learn about phishing attacks by simulating suspicious links and data collection.",
@@ -98,8 +108,8 @@ export default function ProjectsSection() {
                   src={project.img} 
                   alt={project.title}
                   fill 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="w-full h-full object-cover filter contrast-125 grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 400px"
+                  className={`w-full h-full ${project.imgFit ?? "object-cover"} filter contrast-125 grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent z-10 opacity-90" />
                 

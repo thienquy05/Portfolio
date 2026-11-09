@@ -7,6 +7,25 @@ import { FaFingerprint, FaBriefcase, FaBook, FaFolderOpen, FaSatelliteDish, FaBa
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  // On mobile the closed drawer is only translated offscreen; make it inert so Tab skips it.
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isOpen]);
 
   const navLinks = [
     { name: "ABOUT", href: "#about", icon: FaFingerprint, id: "about" },
@@ -66,6 +85,8 @@ export default function Navigation() {
       <button 
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Open navigation menu"
+        aria-expanded={isOpen}
+        aria-controls="site-nav"
         className={`fixed top-4 left-4 z-50 p-3 rounded-md bg-black border border-secondary text-secondary md:hidden shadow-[0_0_15px_rgba(255,210,0,0.3)] hover:bg-secondary hover:text-black transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-black ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
       >
         <FaBars />
@@ -85,15 +106,19 @@ export default function Navigation() {
       </AnimatePresence>
 
       {/* Full Height Cyber Command Sidebar */}
-      <motion.nav 
+      <motion.nav
+        id="site-nav"
+        aria-label="Main"
+        inert={isMobile && !isOpen}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
         className={`fixed top-0 left-0 h-dvh w-20 hover:w-64 bg-black/95 backdrop-blur-2xl border-r-2 border-secondary/20 transition-all duration-300 z-40 flex flex-col items-center py-10 overflow-hidden group shadow-[20px_0_40px_rgba(0,0,0,0.9)] ${isOpen ? 'translate-x-0' : '-translate-x-[150%] md:translate-x-0'}`}
       >
         {/* UNWANTED Dossier Logo */}
-        <a 
-          href="#home" 
+        <a
+          href="#home"
+          aria-label="Home"
           onClick={() => setActiveSection("home")}
           className="mb-16 relative w-14 h-[72px] flex flex-col items-center justify-start border border-secondary/40 bg-[#0a0a0a] transition-all group-hover:shadow-[0_0_20px_rgba(255,210,0,0.5)] group-hover:border-secondary group/logo shrink-0"
           style={{
@@ -159,6 +184,8 @@ export default function Navigation() {
               <a 
                 key={link.name} 
                 href={link.href}
+                aria-label={link.name.toLowerCase()}
+                aria-current={isActive ? "location" : undefined}
                 onClick={() => {
                   setIsOpen(false);
                   setActiveSection(link.id);

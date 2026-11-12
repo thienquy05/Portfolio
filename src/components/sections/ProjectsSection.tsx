@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaGithub, FaServer, FaLink, FaDatabase } from "react-icons/fa";
+import { FaGithub, FaServer, FaLink, FaTrophy } from "react-icons/fa";
+import { SiDevpost } from "react-icons/si";
 
 const projects = [
   {
@@ -20,7 +21,9 @@ const projects = [
     desc: "Autonomous Agent Security Guard & Prompt Injection Firewall (MakeUC 2026). I designed the firewall workflow, built the admin and intelligence workers that process firewall events and draft new rule candidates, and redesigned the admin and classroom consoles. In end-to-end testing, an approved AI-drafted rule blocked the same attack in a new session.",
     tags: ["AI Security", "Python", "FastAPI", "Next.js"],
     link: "https://github.com/MakeUC2026/AEGIS",
-    status: "HACKATHON",
+    status: "WINNER",
+    award: "Winner · MLH Best Use of Auth0",
+    devpostLink: "https://devpost.com/software/aegis-hqro4a",
     imgFit: "object-contain", // banner art has text at the edges; don't crop it
   },
 
@@ -96,8 +99,12 @@ export default function ProjectsSection() {
                   <div className="w-1.5 h-1.5 bg-green-500/50 group-hover:bg-green-500 transition-colors" />
                   <span className="text-secondary/70 text-[10px] font-mono ml-2 uppercase tracking-[0.2em]">PROJECT_{idx + 1}</span>
                 </div>
-                <span className={`text-[10px] font-mono uppercase tracking-[0.2em] px-2 py-0.5 border ${project.status === 'ACTIVE' || project.status === 'DEPLOYED' ? 'border-secondary/30 bg-secondary/10 text-secondary shadow-[0_0_5px_rgba(255,210,0,0.3)]' : 'border-white/10 bg-white/5 text-white/60'}`}>
-                  {project.status}
+                <span className={`text-[10px] font-mono uppercase tracking-[0.2em] px-2 py-0.5 border ${['ACTIVE', 'DEPLOYED', 'WINNER'].includes(project.status) ? 'border-secondary/30 bg-secondary/10 text-secondary shadow-[0_0_5px_rgba(255,210,0,0.3)]' : 'border-white/10 bg-white/5 text-white/60'}`}>
+                  {project.award ? (
+                    <span className="flex items-center gap-1.5 whitespace-nowrap text-[9px] tracking-[0.05em]">
+                      <FaTrophy className="text-xs" /> {project.award}
+                    </span>
+                  ) : project.status}
                 </span>
               </div>
 
@@ -154,9 +161,23 @@ export default function ProjectsSection() {
                       className="flex-1 flex items-center justify-center gap-2 bg-secondary/10 hover:bg-secondary border border-secondary/30 hover:border-secondary text-secondary hover:text-black font-mono font-bold py-3 rounded-lg transition-all text-xs uppercase tracking-widest relative overflow-hidden"
                     >
                       <FaGithub className="text-base relative z-10" /> 
-                      <span className="relative z-10">{project.deployLink ? "Source" : "GitHub Repo"}</span>
+                      <span className="relative z-10">{project.deployLink || project.devpostLink ? "Source" : "GitHub Repo"}</span>
                     </motion.a>
                     
+                    {project.devpostLink && (
+                      <motion.a
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        href={project.devpostLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 bg-secondary/10 hover:bg-secondary border border-secondary/30 hover:border-secondary text-secondary hover:text-black font-mono font-bold py-3 rounded-lg transition-all text-xs uppercase tracking-widest relative overflow-hidden"
+                      >
+                        <SiDevpost className="text-base relative z-10" />
+                        <span className="relative z-10">Devpost</span>
+                      </motion.a>
+                    )}
+
                     {project.deployLink && (
                       <motion.a 
                         whileHover={{ scale: 1.02 }}

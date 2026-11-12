@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SiDevpost } from "react-icons/si";
 import { FaLinkedin, FaGithub, FaEnvelope, FaFacebook, FaSatelliteDish } from "react-icons/fa";
 
 const socialLinks = [
   { name: "[LINKEDIN_DOSSIER]", desc: "Professional Records", href: "https://www.linkedin.com/in/thien-quy-pham-744678329/", icon: FaLinkedin, color: "text-[#007AB5]", border: "hover:border-[#007AB5]", bgHover: "hover:bg-[#007AB5]/10" },
   { name: "[GITHUB_EVIDENCE]", desc: "Codebase Archive", href: "https://github.com/thienquy05", icon: FaGithub, color: "text-white", border: "hover:border-white", bgHover: "hover:bg-white/10" },
+  { name: "[DEVPOST_TROPHY_CASE]", desc: "Hackathon Portfolio", href: "https://devpost.com/thienquy05", icon: SiDevpost, color: "text-[#3DB5D6]", border: "hover:border-secondary", bgHover: "hover:bg-secondary/10" },
   { name: "[FACEBOOK_ALIAS]", desc: "Social Network", href: "https://www.facebook.com/pham.thien.quy.2025", icon: FaFacebook, color: "text-[#0539BC]", border: "hover:border-[#0539BC]", bgHover: "hover:bg-[#0539BC]/10" },
 ];
 
